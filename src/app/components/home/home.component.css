@@ -8,10 +8,13 @@ article {
 section {
     display: flex;
     flex-flow: row nowrap;
-    margin-bottom: 2em;
+    margin: auto auto 6em auto;
 }
 
 img {
     width: 40em;
-    margin: auto;
+}
+
+.txt {
+    width: 40em;
 }
