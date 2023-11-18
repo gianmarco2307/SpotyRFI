@@ -8,7 +8,7 @@ article {
 section {
     display: flex;
     flex-flow: row nowrap;
-    margin: auto auto 6em auto;
+    margin: 4em auto 6em auto;
 }
 
 img {
