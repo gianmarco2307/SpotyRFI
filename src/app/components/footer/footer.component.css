@@ -1,0 +1,10 @@
+footer {
+    text-align: center;
+    height: 20em;
+    background-color: var(--bs-primary-bg-subtle);
+    justify-content: center;
+}
+
+img {
+    height: 8em
+}
