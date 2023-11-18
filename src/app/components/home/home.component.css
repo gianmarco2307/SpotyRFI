@@ -2,4 +2,16 @@ article {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    margin: 2em;
+}
+
+section {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 2em;
+}
+
+img {
+    width: 40em;
+    margin: auto;
 }
