@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Tilt+Neon&family=Ubuntu:ital,wght@1,500&family=Young+Serif&display=swap');
+
 article {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     margin: 2em;
+    font-family: 'Merienda', cursive;
 }
 
 section {
@@ -20,4 +23,14 @@ img {
     width: 40em;
     color: white;
     margin-left: 1em;
+    margin-right: 1em;
+}
+
+h2 {
+    font-size: 2.75em;
+    margin-bottom: 0.4em;
+}
+
+p {
+    font-size: 1.2em;
 }
