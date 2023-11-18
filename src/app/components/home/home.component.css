@@ -24,6 +24,8 @@ img {
     color: white;
     margin-left: 1em;
     margin-right: 1em;
+    border-bottom: 0.1em white solid;
+    text-align: justify;
 }
 
 h2 {
