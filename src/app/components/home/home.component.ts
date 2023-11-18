@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  openLink(url: string){
+    window.open(url, "_blank");
+  }
 }

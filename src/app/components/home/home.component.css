@@ -13,8 +13,11 @@ section {
 
 img {
     width: 40em;
+    cursor: pointer;
 }
 
 .txt {
     width: 40em;
+    color: white;
+    margin-left: 1em;
 }
