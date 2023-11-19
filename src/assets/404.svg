@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="700"
+   height="300"
+   viewBox="0 0 185.20833 79.375002"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="404.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="1.4289282"
+     inkscape:cx="425.84366"
+     inkscape:cy="197.70063"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="325.41874"
+       y="51.787068"
+       width="329.61769"
+       height="195.95107"
+       id="rect3812" />
+  </defs>
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="M 6.850998,65.716627 36.989993,13.658373 67.128986,65.716627 Z m 9.45269,-5.479822 H 57.676296 L 36.989993,24.618003 Z m 20.686305,-2.739904 q 1.164462,0 1.952189,-0.787748 0.787748,-0.787746 0.787748,-1.952177 0,-1.164462 -0.787748,-1.952189 -0.787747,-0.787747 -1.952189,-0.787747 -1.164462,0 -1.952188,0.787747 -0.787749,0.787748 -0.787749,1.952189 0,1.164461 0.787749,1.952177 0.787748,0.787748 1.952188,0.787748 z m -2.739904,-8.219726 h 5.479808 V 35.577632 h -5.479808 z m 2.739904,-6.849766 z"
+       id="path17"
+       style="stroke-width:0.00661458" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.42019531,0,0,0.45097084,-72.625824,-25.804462)"
+       id="text3810"
+       style="font-style:normal;font-weight:normal;font-size:170.667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3812);fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.607804"><tspan
+         x="325.41797"
+         y="205.51617"
+         id="tspan22904"><tspan
+           style="font-family:Arial;-inkscape-font-specification:Arial"
+           id="tspan22902">404</tspan></tspan></text>
+  </g>
+</svg>
