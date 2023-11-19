@@ -36,3 +36,10 @@ h2 {
 p {
     font-size: 1.2em;
 }
+
+.btn {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    /* Aggiungi altri stili necessari per adattarsi al tuo design */
+  }
