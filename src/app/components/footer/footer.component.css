@@ -3,8 +3,16 @@ footer {
     height: 20em;
     background-color: var(--bs-primary-bg-subtle);
     justify-content: center;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 img {
     height: 8em
+}
+
+p {
+    color: white;
+    width: 40em;
+    text-align: justify;
 }
