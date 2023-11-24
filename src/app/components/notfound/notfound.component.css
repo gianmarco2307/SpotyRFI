@@ -2,11 +2,11 @@ article {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    margin: 2em;
+    margin: 6em;
     font-family: 'Merienda', cursive;
 }
 
-section {
+/* section {
     flex-flow: row wrap;
     margin: 4em auto 0 auto;
 }
@@ -24,4 +24,4 @@ h1 {
 
 img {
     height: 25em;
-}
+} */

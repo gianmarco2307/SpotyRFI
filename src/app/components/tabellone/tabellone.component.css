@@ -1,0 +1,161 @@
+@import url('https://fonts.cdnfonts.com/css/caros');
+
+.background {
+    width: 40em;
+    height: 20em;
+    background-color: black;
+    margin: auto;
+}
+
+.riga {
+    border-top: 0.1em white solid;
+    width: 38em;
+    margin: 0 1em 0 1em;
+}
+
+.binario {
+    color: white;
+    font-family: 'Caros', sans-serif;
+    width: 11.5em;
+    float: left;
+}
+
+h2 {
+    font-size: 5em;
+}
+
+.destinazione {
+    color: white;
+    width: 61em;
+    float:initial
+}
+
+.destinazione p {
+    font-size:x-small;
+    font-family: 'Caros', sans-serif;
+}
+
+.pdest {
+    background-color: #484848;
+    color: #484848;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 11em;
+    width: 27em;
+    height: 3em;
+    float:initial;
+    animation: lighting 15s linear infinite;
+}
+
+.pdest h4 {
+    font-size: 2.4em;
+}
+
+.treno {
+    color: white;
+    font-family: 'Caros', sans-serif;
+    width: 11.5em;
+    float: left;
+}
+
+.treno p {
+    font-size:x-small;
+    font-family: 'Caros', sans-serif;
+}
+
+.ptreno {
+    background-color: #484848;
+    color: #484848;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 10.99em;
+    height: 3em;
+    float:initial;
+    animation: lighting 15s linear infinite;
+}
+
+.ptreno h4 {
+    font-size: 1.2em;
+    margin-left: 0.2em;
+    margin-bottom: 0.1em;
+}
+
+.ptreno h5 {
+    font-size: 1em;
+    margin-left: 0.2em;
+}
+
+.partenza {
+    color: white;
+    width: 61em;
+    float:initial
+}
+
+.partenza p {
+    font-size:x-small;
+    font-family: 'Caros', sans-serif;
+}
+
+.ppart {
+    background-color: #484848;
+    color: #484848;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 11em;
+    width: 27em;
+    height: 3em;
+    float:initial;
+    animation: lighting 15s linear infinite;
+}
+
+.ppart h4 {
+    font-size: 2.4em;
+}
+
+.info {
+    color: white;
+    width: 61em;
+    float:initial
+}
+
+.info p {
+    font-size:x-small;
+    font-family: 'Caros', sans-serif;
+}
+
+.pinfo {
+    background-color: #484848;
+    color: #484848;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 38em;
+    height: 3em;
+    float:initial;
+    animation: lighting 15s linear infinite;
+    overflow: hidden;
+}
+
+.pinfo h4 {
+    font-size: 1.8em;
+    white-space: nowrap;
+    position: relative;
+    animation: scroll-left 15s linear infinite;
+}
+
+
+@keyframes lighting {
+    0% {
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+
+    100% {
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
