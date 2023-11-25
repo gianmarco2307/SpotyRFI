@@ -43,7 +43,7 @@ h2 {
     width: 27em;
     height: 3em;
     float:initial;
-    animation: lighting 15s linear infinite;
+    animation: lighting 20s linear infinite;
 }
 
 .pdest h4 {
@@ -136,7 +136,7 @@ h2 {
     font-size: 1.8em;
     white-space: nowrap;
     position: relative;
-    animation: scroll-left 15s linear infinite;
+    animation: scroll-left 20s linear infinite;
 }
 
 
