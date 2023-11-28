@@ -1,77 +1,117 @@
-<article>
-  <!-- Benvenuto -->
-  <section>
-    <div class="img">
-      <img
-        src="assets/lineesiciliane.png"
-        (click)="
-          openLink(
-            'https://normativaesercizio.rfi.it/NormativaEsercizio/detail.xhtml?doctype=FCL&compartimento=PA'
-          )
-        "
-        alt="Mappa linee ferroviarie siciliane di RFI"
-      />
-    </div>
-    <div class="txt">
-      <h2>Benvenuto su SpotiRFI! 🚄🎵</h2>
-      <p>
-        SpotiRFI è un viaggio unico attraverso la musica e le linee ferroviarie
-        della Sicilia. Ogni stazione ferroviaria sulla mappa è associata a una
-        canzone che porta il suo nome<span
-          class="btn"
-          data-bs-container="body"
-          data-toggle="popover"
-          data-bs-placement="bottom"
-          data-bs-content="Non sono attualmente previsti i posti di movimento, solo STAZIONI e FERMATE. Non sono considerate le linee dismesse. Sono considerate le linee non attive IN FASE DI RIPRISTINO"
-        >
-          * </span
-        >, creando un'esperienza musicale che riflette il viaggio attraverso la
-        nostra bellissima regione.
-      </p>
-    </div>
-  </section>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
 
-  <!-- Come funziona -->
-  <section>
-    <div class="txt">
-      <h2>Come funziona? 🧐</h2>
-      <p>
-        Scegli una linea ferroviaria sulla mappa e inizia il tuo viaggio
-        musicale. Ad ogni fermata, ti verrà presentata una canzone che porta il
-        nome della stazione. Puoi ascoltare la canzone mentre leggi informazioni
-        sulla stazione e sulla sua storia.
-      </p>
-    </div>
-    <div class="img">
-      <img
-        src="https://www.palermomania.it/public/news/image/images/metro.jpg"
-        (click)="openLink('https://www.palermomania.it/')"
-        alt="Cartello passante ferroviario di Palermo"
-      />
-    </div>
-  </section>
+<div id="picture"></div>
 
-  <!-- Perchè -->
-  <section>
-    <div class="img">
-      <img
-        src="https://www.stagniweb.it/altro/orizzf/636gioi0.jpg"
-        (click)="
-          openLink(
-            'https://www.stagniweb.it/foto6.asp?File=orizzf&Inizio=68&Righe=10&InizioI=1&RigheI=150&Col=5&Titolo=0'
-          )
-        "
-        alt="Locomotiva E636.010 in transito a Gioiosa Marea(ME)"
-      />
+<section class="about-section mt-5">
+  <div class="container">
+    <div class="row img-wrap mb-5 mb-lg-0">
+      <div class="col-12">
+        <div class="row">
+          <div class="mb-4 margin-lg-0 col-lg-6 order-lg-2">
+            <a class="effect">
+              <img
+                src="assets/lineesiciliane.png"
+                alt="Mappa linee ferroviarie siciliane di RFI"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div
+            class="col-lg-5 mr-auto text-lg-right align-self-center order-lg-1"
+          >
+            <h2>Benvenuto su SpotiRFI! 🚄🎵</h2>
+            <p class="mb-4">
+              SpotiRFI è un viaggio unico attraverso la musica e le linee
+              ferroviarie della Sicilia. Ogni stazione ferroviaria sulla mappa è
+              associata a una canzone che porta il suo nome<span
+                class="btn"
+                id="popover"
+                data-bs-container="body"
+                data-toggle="popover"
+                data-bs-placement="bottom"
+                data-bs-content="Non sono attualmente previsti i posti di movimento, solo STAZIONI e FERMATE. Non sono considerate le linee dismesse. Sono considerate le linee non attive IN FASE DI RIPRISTINO"
+              >
+                * </span
+              >, creando un'esperienza musicale che riflette il viaggio
+              attraverso la nostra bellissima regione.
+            </p>
+            <a
+              href="https://normativaesercizio.rfi.it/NormativaEsercizio/detail.xhtml?doctype=FCL&compartimento=PA"
+              class="btn btn-about"
+              target="_blank"
+              ><span class="material-symbols-outlined"> open_in_new </span></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="txt">
-      <h2>Perché SpotiRFI? 🤔</h2>
-      <p>
-        La musica e i viaggi sono due esperienze che possono portarci in luoghi
-        che non abbiamo mai visitato. SpotiRFI combina queste due esperienze in
-        un unico viaggio, permettendoti di esplorare la Sicilia attraverso le
-        sue linee ferroviarie e la sua musica.
-      </p>
+    <!------->
+    <div class="row img-wrap mb-5 mb-lg-0">
+      <div class="col-12">
+        <div class="row">
+          <div class="mb-4 margin-lg-0 col-lg-6">
+            <a class="effect">
+              <img
+                src="https://www.palermomania.it/public/news/image/images/metro.jpg"
+                alt="Cartello passante ferroviario di Palermo"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div class="col-lg-5 ml-auto align-self-center order-lg-1">
+            <h2>Come funziona? 🧐</h2>
+            <p class="mb-4">
+              Scegli una linea ferroviaria sulla mappa e inizia il tuo viaggio
+              musicale. Ad ogni fermata, ti verrà presentata una canzone che
+              porta il nome della stazione. Puoi ascoltare la canzone mentre
+              leggi informazioni sulla stazione e sulla sua storia.
+            </p>
+            <a
+              href="https://www.palermomania.it/"
+              class="btn btn-about"
+              target="_blank"
+              ><span class="material-symbols-outlined"> open_in_new </span></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
-</article>
+    <!------->
+    <div class="row img-wrap mb-5 mb-lg-0">
+      <div class="col-12">
+        <div class="row">
+          <div class="mb-4 margin-lg-0 col-lg-6 order-lg-2">
+            <a class="effect">
+              <img
+                src="https://www.stagniweb.it/altro/orizzf/636gioi0.jpg"
+                alt="Locomotiva E636.010 in transito a Gioiosa Marea(ME)"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div
+            class="col-lg-5 mr-auto text-lg-right align-self-center order-lg-1"
+          >
+            <h2>Perché SpotiRFI? 🤔</h2>
+            <p class="mb-4">
+              La musica e i viaggi sono due esperienze che possono portarci in
+              luoghi che non abbiamo mai visitato. SpotiRFI combina queste due
+              esperienze in un unico viaggio, permettendoti di esplorare la
+              Sicilia attraverso le sue linee ferroviarie e la sua musica.
+            </p>
+            <a
+              href="https://www.stagniweb.it/foto6.asp?File=orizzf&Inizio=68&Righe=10&InizioI=1&RigheI=150&Col=5&Titolo=0"
+              class="btn btn-about"
+              target="_blank"
+              ><span class="material-symbols-outlined"> open_in_new </span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------->
+  </div>
+</section>
