@@ -1,21 +1,77 @@
-<footer
-  class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body"
-  data-bs-theme="dark"
->
-  <br />
-  <img
-    src="assets/logo.png"
-    alt="Logo"
-    height="30"
-    class="d-inline-block align-text-top"
-  />
-  <br />
-  <br />
-  <p>
-    SpotiRFI è un sito indipendente e non è affiliato, sponsorizzato o approvato
-    da Spotify o RFI. Non abbiamo l’intenzione di ledere in alcun modo la loro
-    immagine o reputazione. Il nostro obiettivo è fornire un servizio utile e di
-    qualità per i nostri utenti, nel rispetto dei diritti di proprietà
-    intellettuale e delle normative vigenti.
-  </p>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div id="liveAlertPlaceholder" #liveAlertPlaceholder></div>
+
+<!-- FOOTER: https://codepen.io/msujeet0/pen/RRbXrY -->
+<footer class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+  <div class="layout">
+    <div class="footer-wrapper clearfix">
+      <div class="grid-3 footer-logo">
+        <a href="#"><img alt="html layout logo" src="assets/logo.png" /></a>
+        <p class="footer-text">
+          SpotiRFI: Un viaggio musicale unico attraverso le linee ferroviarie
+          della Sicilia. Ogni stazione, una nuova canzone.
+        </p>
+        <button type="button" id="liveAlertBtn" #liveAlertBtn><span class="material-symbols-outlined" id="liveAlertBtn">
+          info
+          </span></button>
+      </div>
+      <div class="grid-3">
+        <p class="footer-heading">pagine</p>
+        <ul class="footermenu">
+          <li>
+            <a routerLink="tratte">Le tratte</a>
+          </li>
+          <li>
+            <a routerLink="chisiamo">Chi siamo</a>
+          </li>
+          <li>
+            <a href="https://www.rfi.it/it.html" target="_blank">RFI</a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/intl-it" target="_blank">Spotify</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-3">
+        <p class="footer-heading">link</p>
+        <ul class="footer-contact">
+          <li>
+            <i class="fa fa-home"></i><span>address:</span> O Html layout, 54100
+            new delhi
+          </li>
+          <li>
+            <i class="fa fa-phone"></i><span>phone:</span>
+            <a href="tel:88%2002%208714612">+91 8173096601</a>
+          </li>
+          <li>
+            <i class="fa fa-envelope-o"></i><span>e-mail:</span>
+            <a href="mailto:msujeet0@gaiml.com">Msujeet0@gmail.com</a>
+          </li>
+          <li>
+            <i class="fa fa-chrome"></i><span>web:</span>
+            <a href="http://htmllayout.in">www.htmllayout.in</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid-3">
+        <p class="footer-heading">recent posts</p>
+        <ul class="footerblog">
+          <li>
+            <a href="#">The Green Fields of Spring</a>
+            <p>13th Jun 2014</p>
+          </li>
+          <li>
+            <a href="#">This is a Video Post</a>
+            <p>18th Nov 2014</p>
+          </li>
+          <li>
+            <a href="#">Satisfaction Lies in the Effort</a>
+            <p>13th Jun 2014</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </footer>
+<!-- footer End -->
