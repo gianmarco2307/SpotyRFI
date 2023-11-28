@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-declare var $: any;
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,10 +12,4 @@ export class HomeComponent {
   }
 
   title = 'app';
-
-  ngAfterViewInit() {
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
-  }
 }
