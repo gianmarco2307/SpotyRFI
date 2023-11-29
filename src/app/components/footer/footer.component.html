@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-<div id="liveAlertPlaceholder" #liveAlertPlaceholder></div>
-
 <!-- FOOTER: https://codepen.io/msujeet0/pen/RRbXrY -->
 <footer class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="layout">
@@ -12,7 +10,7 @@
           SpotiRFI: Un viaggio musicale unico attraverso le linee ferroviarie
           della Sicilia. Ogni stazione, una nuova canzone.
         </p>
-        <button type="button" id="liveAlertBtn" #liveAlertBtn><span class="material-symbols-outlined" id="liveAlertBtn">
+        <button type="button" id="liveAlertBtn" (click)="disclaimer()"><span class="material-symbols-outlined" id="liveAlertBtn">
           info
           </span></button>
       </div>
