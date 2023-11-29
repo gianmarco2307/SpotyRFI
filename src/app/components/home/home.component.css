@@ -49,13 +49,13 @@ p {
   }
 
   #picture {
-    background-image: url("https://sb.ecobnb.net/app/uploads/sites/2/2016/03/ferrovia-riconvertita-in-italia.jpg");
+    background-image: url("https://external-preview.redd.it/in-sicilia-su-strade-colabrodo-e-treni-lumaca-aspettando-il-v0-YGYToK560tbwieHeMTYEEwdI9G0MiCoAnOe-kdmPdrU.jpg?auto=webp&s=0d0a9a6e7891b6fe511766e49a45ffb84cf2124f");
     width:100%;
-    height:450px;
+    height:550px;
     position:relative;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center center;
     z-index:0;
 }
 
