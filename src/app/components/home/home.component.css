@@ -72,7 +72,7 @@ p {
     right:10px;
     bottom:10px;
     left:10px;
-    background: #e8e2e2;
+    background: #2b3035;
     transition: .3s all ease-in-out;
 }
 .img-wrap:hover .effect:after{
@@ -81,7 +81,7 @@ p {
     position: absolute;
 }
 .btn-about{
-    color:#fff!important;
+    color:#000!important;
     margin-right:5px;
     margin-left:5px;
     animation:skew 3s infinite;
@@ -91,7 +91,7 @@ p {
 }
 
 .row {
-    color: #fff;
+    color: #000;
     margin-bottom: 4em;
 }
 
