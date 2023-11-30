@@ -12,15 +12,14 @@
   </div>
 </article>
 
-<article>
+<article *ngFor="let tratta of listaTratte">
   <div class="blog-card spring-fever">
     <div class="title-content">
-      <h3><a href="#">10 inspiring photos</a></h3>
-      <div class="intro"><a href="#">Inspiration</a></div>
+      <h3><a href="#">{{tratta.partenza}} - {{tratta.destinazione}}</a></h3>
+      <div class="intro">Inspiration</div>
     </div>
     <div class="card-info">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
+      Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} con questa playlist
       <a href="#"
         >Read Article<span class="licon icon-arr icon-black"></span
       ></a>

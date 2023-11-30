@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "SpotyRFI",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

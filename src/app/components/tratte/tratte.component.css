@@ -5,7 +5,7 @@ article {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: 2em;
+    margin-bottom: 4rem;
     font-family: 'Merienda', cursive;
 }
 
@@ -31,7 +31,7 @@ body {
   max-width: 550px;
   width:100%;
   height: 500px;
-  position: absolute;
+  position: relative;
   font-family: 'Droid Serif', serif;
   color:#fff;
   top: 20%;
@@ -182,43 +182,6 @@ h3:after {
    filter: brightness(10);
    opacity:1
 }
-.utility-info {
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  z-index: 20;
-  width:100%;
-  text-align:left
-}
-.utility-info:after{
-  content:" ";
-  background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat;
-  background-size: 30px auto;
-  display:block;
-  opacity: 0.4;
-  position:absolute;
-  bottom:25px;
-  right:15px;
-  width:30px;
-  height:15px
-}
-.utility-info a:hover{
-  text-decoration:underline
-}
-.utility-list {
-  list-style-type: none;
-  margin: 0 0 10px 20px;
-  padding: 0;
-  width: 100%;
-
-}
-.utility-list li {
-  margin: 0 5px 0 0;
-  padding: 3px 0 15px 0px;
-  display: inline-block;
-  
-  font-size:0.8em
-}
 
 .licon{
   position:relative;  
@@ -239,27 +202,10 @@ h3:after {
    top:-3px;
    left:0;
 }
-.icon-white{
-   filter: brightness(10);
-}
+
 .icon-black{
    filter: brightness(0);
    opacity:0.6
-}
-.icon-like:before{
-  background-position: -183px -6px;
-
-}
-.icon-com:before{
-  background-position: -63px -4px;
-
-}
-.icon-dat:before{
-  background-position: -94px -7px;
-}
-.icon-tag:before{
-  background-position: -33px -6px;
-
 }
 
 @media (max-width:750px)

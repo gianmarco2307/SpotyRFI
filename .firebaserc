@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "spotirfi": {
+      "hosting": {
+        "SpotyRFI": [
+          "spotirfi"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "spotirfi"
+  }
+}
