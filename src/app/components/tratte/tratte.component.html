@@ -16,10 +16,11 @@
     <div class="blog-card spring-fever" style="background: url({{tratta.srcimg}}) center no-repeat;">
       <div class="title-content">
         <h3><a href="#">{{tratta.partenza}} - {{tratta.destinazione}}</a></h3>
-        <div class="intro">Inspiration</div>
+        <div class="intro" *ngIf="tratta.note == ''">Inspiration</div>
+        <div class="intro" *ngIf="tratta.note != ''">{{tratta.note}}</div>
       </div>
       <div class="card-info">
-        Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} con questa playlist
+        Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} {{tratta.note}} con questa playlist
         <a href="#"
         >Galleria<span class="licon icon-arr icon-black"></span
           ></a>
