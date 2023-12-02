@@ -13,6 +13,7 @@ import { TabelloneComponent } from './components/tabellone/tabellone.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { PlaylistPageComponent } from './components/playlist-page/playlist-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { environment } from 'src/environments/environment';
     ChisiamoComponent,
     NotfoundComponent,
     FooterComponent,
-    TabelloneComponent
+    TabelloneComponent,
+    PlaylistPageComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class FirebaseService {
 
   constructor(private firestore : AngularFirestore ) { }
 
-  getAlbums(): Observable<any[]> {
+  getTratte(): Observable<any[]> {
     return this.firestore.collection('tratte').valueChanges();
   }
   

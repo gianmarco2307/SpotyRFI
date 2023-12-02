@@ -21,7 +21,7 @@
       </div>
       <div class="card-info">
         Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} {{tratta.note}} con questa playlist
-        <a href="#"
+        <a (click)="sendInfo(tratta.id)"
         >Playlist<span class="licon icon-arr icon-black"></span
           ></a>
         </div>
