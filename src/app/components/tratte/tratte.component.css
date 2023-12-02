@@ -55,7 +55,8 @@ body {
 .blog-card a{ 
 color:#fff;
   text-decoration:none;
-  transition:all 0.2s
+  transition:all 0.2s;
+  cursor: pointer;
 }
 .blog-card .color-overlay {
   background: rgba(64, 84, 94,0.5);
