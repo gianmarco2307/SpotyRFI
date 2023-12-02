@@ -6,3 +6,30 @@
 .incontainer {
     align-items: center;
 }
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+    .container {
+        align-items: center;
+        width: 72%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        align-items: center;
+        width: 77%;
+    }
+}
+
+@media screen and (min-width: 281px) and (max-width: 767px) {
+    .container {
+        align-items: center;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .container {
+        align-items: center;
+        width: 97%;
+    }    
+}
