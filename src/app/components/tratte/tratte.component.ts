@@ -21,7 +21,7 @@ export class TratteComponent implements OnInit {
 
     this.firebase.getTratte().subscribe((data: any) => {
       this.listaTratte = data;
-      console.log(this.listaTratte)
+      // console.log(this.listaTratte)
     });
 
 
@@ -29,9 +29,9 @@ export class TratteComponent implements OnInit {
   }
 
 sendInfo(trattaId: string) {
-      console.log("Tentativo di inviare ID:", trattaId);
+      // console.log("Tentativo di inviare ID:", trattaId);
       this.sendID.next(trattaId);
-      console.log("ID passato a sendID:", trattaId);
+      // console.log("ID passato a sendID:", trattaId);
       this.router.navigateByUrl(`/tratta/${trattaId}`);
     }
 
