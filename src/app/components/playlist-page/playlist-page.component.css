@@ -1,11 +1,21 @@
 .container {
     align-items: center;
     width: 55%;
+    margin-bottom: 4em;
+    margin-top: 6em;
 }
 
 .incontainer {
     align-items: center;
 }
+
+.map{
+    display: block;
+    margin: auto;
+    width: 75%;
+    height: auto;
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .container {
         align-items: center;
