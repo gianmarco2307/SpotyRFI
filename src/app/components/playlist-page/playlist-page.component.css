@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+
 .container {
     align-items: center;
     width: 55%;
@@ -7,6 +9,9 @@
 
 .incontainer {
     align-items: center;
+    font-family: 'Futura Std', sans-serif;
+    font-weight: bold;
+    font-size:x-large;
 }
 
 .map{
@@ -15,6 +20,46 @@
     width: 75%;
     height: auto;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li::before {
+    content: "";
+    border-radius: 50%;
+    width: 0.625em; /* 10px/16 */
+    height: 0.625em; /* 10px/16 */
+    background: red;
+    display: inline-block;
+    margin-right: 0.625em; /* 10px/16 */
+  }
+  
+  li {
+    margin: 0.625em 0; /* 10px/16 */
+    position: relative;
+  }
+  
+  li::after {
+    content: "";
+    position: absolute;
+    width: 0.125em; /* 2px/16 */
+    height: calc(100% + 0.625em); /* 10px/16 */
+    background: red;
+    left: 0.25em; /* 4px/16 */
+    top: 0.625em; /* 10px/16 */
+  }
+  
+  li:first-child::after {
+    top: 0.625em; /* 10px/16 */
+  }
+  
+  li:last-child::after {
+    height: 0;
+  }
+
 
 @media screen and (min-width: 1025px) and (max-width: 1300px) {
     .container {

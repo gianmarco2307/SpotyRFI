@@ -11,6 +11,8 @@
       loading="lazy"
     ></iframe>
     <br><br><br>
-    <img class="map" src="{{tratta.srcMap}}">
+    <ul>
+      <li *ngFor="let station of stations[i]">{{station}}</li>
+    </ul>
   </div>
 </div>
