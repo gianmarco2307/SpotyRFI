@@ -39,4 +39,11 @@ export class PlaylistPageComponent {
   stationToModal(clickedStation: string){
     this.actualStation = clickedStation;
   }
+
+  openMaps(){
+    let daCercare: string = 'stazione di ' + this.actualStation;
+    let url: string = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(daCercare);
+    window.open(url, '_blank');
+    console.log(url)
+  }
 }
