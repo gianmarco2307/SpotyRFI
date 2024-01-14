@@ -22,7 +22,7 @@
         <div class="intro" *ngIf="tratta.note != ''">{{tratta.note}}</div>
       </div>
       <div class="card-info">
-        Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} {{tratta.note}} con questa playlist
+        Vivi il viaggio da {{tratta.partenza}} a {{tratta.destinazione}} ({{tratta.note}}) con questa playlist
         <a (click)="sendInfo(tratta.id)"
         >Playlist<span class="licon icon-arr icon-black"></span
           ></a>
