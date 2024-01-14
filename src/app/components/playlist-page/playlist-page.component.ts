@@ -14,6 +14,7 @@ export class PlaylistPageComponent {
   stations: any[][] =  [];
   trattaSrc!: SafeResourceUrl;          //questa variabile è d'appoggio
   srcs: SafeResourceUrl[] = [];         //array che raccoglie tutti i nostri url sanificati
+  actualStation: string = ''
 
   constructor(protected fireServ: FirebaseService, private route: ActivatedRoute, private sanitizer: DomSanitizer){}
 
@@ -33,5 +34,9 @@ export class PlaylistPageComponent {
       }
       this.tratte = data;
     })
+  }
+
+  stationToModal(clickedStation: string){
+    this.actualStation = clickedStation;
   }
 }
