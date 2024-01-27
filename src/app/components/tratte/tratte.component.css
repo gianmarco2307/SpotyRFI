@@ -141,8 +141,17 @@ h3:after {
   height: 2px;
   margin: 20px auto;
   border: 0;
-  background: #BDA26B;
+  background: #006564;
   transition:all 0.2s
+}
+h3.FCE:after {
+  background: #065DA8;
+}
+h3.AMAT:after {
+  background: #00A0C7;
+}
+h3.atm:after {
+  background: #D60B25;
 }
 
 @keyframes changeLetter {
@@ -194,8 +203,17 @@ h3:after {
   font-size:0.8em
 }
 .card-info a:hover{
-  background: #8e7c49;
+  background: #006564;
   color:#fff;
+}
+.card-info a.FCE:hover{
+  background: #065DA8;
+}
+.card-info a.AMAT:hover{
+  background: #00A0C7;
+}
+.card-info a.atm:hover{
+  background: #D60B25;
 }
 .card-info a:hover span{
    filter: brightness(10);
