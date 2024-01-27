@@ -12,7 +12,7 @@
     ></iframe>
     <br><br><br>
     <ul>
-      <li *ngFor="let station of stations[i]" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station)">{{station}}</li>
+      <li *ngFor="let station of stations[i]" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.note)">{{station}}</li>
     </ul>
   </div>
 </div>

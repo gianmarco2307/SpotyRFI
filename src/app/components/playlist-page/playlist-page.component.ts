@@ -14,7 +14,8 @@ export class PlaylistPageComponent {
   stations: any[][] =  [];
   trattaSrc!: SafeResourceUrl;          //questa variabile è d'appoggio
   srcs: SafeResourceUrl[] = [];         //array che raccoglie tutti i nostri url sanificati
-  actualStation: string = ''
+  actualStation: string = '';
+  actualLine: string = '';
 
   constructor(protected fireServ: FirebaseService, private route: ActivatedRoute, private sanitizer: DomSanitizer){}
 
@@ -36,13 +37,22 @@ export class PlaylistPageComponent {
     })
   }
 
-  stationToModal(clickedStation: string){
+  stationToModal(clickedStation: string, line: string){
     this.actualStation = clickedStation;
+    this.actualLine = line;
   }
 
   openMaps(){
-    let daCercare: string = 'stazione di ' + this.actualStation;
-    let url: string = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(daCercare);
+    let url!: string;
+    let daCercare!: string;
+    if(this.actualLine == 'AMAT'){
+      daCercare = 'fermata tram ' + this.actualLine + ' di ' + this.actualStation + ' Palermo';
+    } else if(this.actualLine == 'atm') {
+      daCercare = 'fermata tram ' + this.actualLine + ' di ' + this.actualStation + ' Messina';
+    } else {
+      daCercare = 'stazione di ' + this.actualStation;
+    }
+    url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(daCercare);
     window.open(url, '_blank');
     console.log(url)
   }
