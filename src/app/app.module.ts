@@ -14,6 +14,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { PlaylistPageComponent } from './components/playlist-page/playlist-page.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTabsModule } from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +33,9 @@ import { PlaylistPageComponent } from './components/playlist-page/playlist-page.
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    MatTabsModule
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
