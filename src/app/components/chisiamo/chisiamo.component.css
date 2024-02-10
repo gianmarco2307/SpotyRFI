@@ -1,5 +1,6 @@
 #picture {
-    background-image: url("https://www.ilportaledeitreni.it/wp-content/uploads/2020/10/E656.439D345.1118E656.590E646.028Carrozza-Centoporte-INV-Arquata-Scrivia-La-Spezia-Migliarina.jpg");
+    /* background-image: url("https://www.ilportaledeitreni.it/wp-content/uploads/2020/10/E656.439D345.1118E656.590E646.028Carrozza-Centoporte-INV-Arquata-Scrivia-La-Spezia-Migliarina.jpg"); */
+    background-image: url("src/assets/PMAgnone.JPG");
     width:100%;
     height:550px;
     position:relative;
