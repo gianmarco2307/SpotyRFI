@@ -1,26 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&family=Tilt+Neon&family=Ubuntu:ital,wght@1,500&family=Young+Serif&display=swap");
+
 #picture {
-    background-image: url("src/assets/PMAgnone.JPG");
-    width:100%;
-    height:550px;
-    position:relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    z-index:0;
+  background-image: url("src/assets/PMAgnone.JPG");
+  width: 100%;
+  height: 550px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 0;
 }
 
 h2 {
-    margin-top: 2em;
+  margin-top: 2em;
+  font-family: "Merienda", cursive;
+  font-weight: bolder;
 }
 
-#content { max-width: 58em; text-align: justify; margin: 0 auto; padding: 2em; }
-
-a {
-    text-decoration: none;
-    color: black;
+#content {
+  max-width: 58em;
+  text-align: justify;
+  margin: 0 auto;
+  padding: 2em;
+  font-size: 18px;
+  font-family: "Merienda", cursive;
+  line-height: 1.7;
 }
 
-a:hover {
-    color: grey;
+#ferrosex {
+  text-decoration: none;
+  color: black;
+}
+
+#ferrosex:hover {
+  color: rgb(57, 57, 57);
+}
+
+#GitHub {
+  font-family: "Merienda", cursive;
+  font-weight: bold;
+}
+
+#githubLogo {
+  height: 24px;
+  margin-right: 10px;
 }

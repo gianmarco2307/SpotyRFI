@@ -42,7 +42,7 @@ import { DisclaimerDialogComponent } from './components/disclaimer-dialog/discla
     AngularFirestoreModule,
     MatTabsModule,
     MatDialogModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   providers: [AngularFirestore, provideAnimationsAsync()],
   bootstrap: [AppComponent],

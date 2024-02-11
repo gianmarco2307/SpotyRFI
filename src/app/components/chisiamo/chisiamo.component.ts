@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./chisiamo.component.css']
 })
 export class ChisiamoComponent {
+  openEasterEgg() {
+    window.open("https://github.com/chiaraferrara","_blank");
+  }
 
 }
