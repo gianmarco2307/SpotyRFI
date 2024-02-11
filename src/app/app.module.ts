@@ -11,11 +11,17 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TabelloneComponent } from './components/tabellone/tabellone.component';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreModule,
+} from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { PlaylistPageComponent } from './components/playlist-page/playlist-page.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { DisclaimerDialogComponent } from './components/disclaimer-dialog/disclaimer-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,16 +32,19 @@ import { MatTabsModule } from '@angular/material/tabs';
     NotfoundComponent,
     FooterComponent,
     TabelloneComponent,
-    PlaylistPageComponent
+    PlaylistPageComponent,
+    DisclaimerDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [AngularFirestore, provideAnimationsAsync()],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

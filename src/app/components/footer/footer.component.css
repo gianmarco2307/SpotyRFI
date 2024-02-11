@@ -144,18 +144,14 @@ footer a:hover {
     'FILL' 0,
     'wght' 200,
     'GRAD' 200,
-    'opsz' 24
+    'opsz' 24;
+	color: white;
   }
 
   button {
     background-color: transparent;
     border: none;
     margin: 1em;
-  }
-
-  #liveAlertPlaceholder {
-    width: 75%;
-    margin: auto;
   }
 
 @media (max-width:980px) {
