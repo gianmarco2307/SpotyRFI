@@ -14,8 +14,23 @@
   </div>
 </article>
 
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-  <mat-tab label="Tutti">
+<ul class="tabs">
+  <li [class.active]="isActiveTab('tab1')" (click)="setActiveTab('tab1')">
+    Tutti
+  </li>
+  <li [class.active]="isActiveTab('tab2')" (click)="setActiveTab('tab2')">
+    Treno
+  </li>
+  <li [class.active]="isActiveTab('tab3')" (click)="setActiveTab('tab3')">
+    Tram
+  </li>
+  <li [class.active]="isActiveTab('tab4')" (click)="setActiveTab('tab4')">
+    Metro
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div *ngIf="isActiveTab('tab1')">
     <br />
     <section>
       <article *ngFor="let tratta of listaTratte">
@@ -26,27 +41,27 @@
           <div class="title-content">
             <h3
               [ngClass]="{
-                FCE: tratta.note == 'FCE',
-                AMAT: tratta.note == 'AMAT',
-                atm: tratta.note == 'atm'
+                FCE: tratta.gestore == 'FCE',
+                AMAT: tratta.gestore == 'AMAT',
+                atm: tratta.gestore == 'atm'
               }"
             >
               <a (click)="sendInfo(tratta.id)"
                 >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
               >
             </h3>
-            <div class="intro" *ngIf="tratta.note == ''">Inspiration</div>
-            <div class="intro" *ngIf="tratta.note != ''">{{ tratta.note }}</div>
+            <!-- <div class="intro" *ngIf="tratta.note == ''">Inspiration</div> -->
+            <div class="intro">{{ tratta.gestore }}</div>
           </div>
           <div class="card-info">
             Vivi il viaggio da {{ tratta.partenza }} a
-            {{ tratta.destinazione }} ({{ tratta.note }}) con questa playlist
+            {{ tratta.destinazione }} {{ tratta.note }} con questa playlist
             <a
               (click)="sendInfo(tratta.id)"
               [ngClass]="{
-                FCE: tratta.note == 'FCE',
-                AMAT: tratta.note == 'AMAT',
-                atm: tratta.note == 'atm'
+                FCE: tratta.gestore == 'FCE',
+                AMAT: tratta.gestore == 'AMAT',
+                atm: tratta.gestore == 'atm'
               }"
               >Playlist<span class="licon icon-arr icon-black"></span
             ></a>
@@ -57,8 +72,8 @@
         <!-- /.blog-card -->
       </article>
     </section>
-  </mat-tab>
-  <mat-tab label="Treno">
+  </div>
+  <div *ngIf="isActiveTab('tab2')">
     <br />
     <section>
       <ng-container *ngFor="let tratta of listaTratte">
@@ -70,29 +85,28 @@
             <div class="title-content">
               <h3
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
               >
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
               </h3>
-              <div class="intro" *ngIf="tratta.note == ''">Inspiration</div>
-              <div class="intro" *ngIf="tratta.note != ''">
-                {{ tratta.note }}
+              <div class="intro">
+                {{ tratta.gestore }}
               </div>
             </div>
             <div class="card-info">
               Vivi il viaggio da {{ tratta.partenza }} a
-              {{ tratta.destinazione }} ({{ tratta.note }}) con questa playlist
+              {{ tratta.destinazione }} {{ tratta.note }} con questa playlist
               <a
                 (click)="sendInfo(tratta.id)"
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
                 >Playlist<span class="licon icon-arr icon-black"></span
               ></a>
@@ -104,9 +118,9 @@
         </article>
       </ng-container>
     </section>
-  </mat-tab>
-  <mat-tab label="Tram">
-    <br>
+  </div>
+  <div *ngIf="isActiveTab('tab3')">
+    <br />
     <section>
       <ng-container *ngFor="let tratta of listaTratte">
         <article *ngIf="tratta.mezzo == 'tram'">
@@ -117,29 +131,28 @@
             <div class="title-content">
               <h3
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
               >
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
               </h3>
-              <div class="intro" *ngIf="tratta.note == ''">Inspiration</div>
-              <div class="intro" *ngIf="tratta.note != ''">
-                {{ tratta.note }}
+              <div class="intro">
+                {{ tratta.gestore }}
               </div>
             </div>
             <div class="card-info">
               Vivi il viaggio da {{ tratta.partenza }} a
-              {{ tratta.destinazione }} ({{ tratta.note }}) con questa playlist
+              {{ tratta.destinazione }} {{ tratta.note }} con questa playlist
               <a
                 (click)="sendInfo(tratta.id)"
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
                 >Playlist<span class="licon icon-arr icon-black"></span
               ></a>
@@ -151,8 +164,8 @@
         </article>
       </ng-container>
     </section>
-  </mat-tab>
-  <mat-tab label="Metro">
+  </div>
+  <div *ngIf="isActiveTab('tab4')">
     <br />
     <section>
       <ng-container *ngFor="let tratta of listaTratte">
@@ -164,29 +177,28 @@
             <div class="title-content">
               <h3
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
               >
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
               </h3>
-              <div class="intro" *ngIf="tratta.note == ''">Inspiration</div>
-              <div class="intro" *ngIf="tratta.note != ''">
-                {{ tratta.note }}
+              <div class="intro">
+                {{ tratta.gestore }}
               </div>
             </div>
             <div class="card-info">
               Vivi il viaggio da {{ tratta.partenza }} a
-              {{ tratta.destinazione }} ({{ tratta.note }}) con questa playlist
+              {{ tratta.destinazione }} {{ tratta.note }} con questa playlist
               <a
                 (click)="sendInfo(tratta.id)"
                 [ngClass]="{
-                  FCE: tratta.note == 'FCE',
-                  AMAT: tratta.note == 'AMAT',
-                  atm: tratta.note == 'atm'
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm'
                 }"
                 >Playlist<span class="licon icon-arr icon-black"></span
               ></a>
@@ -198,5 +210,5 @@
         </article>
       </ng-container>
     </section>
-  </mat-tab>
-</mat-tab-group>
+  </div>
+</div>

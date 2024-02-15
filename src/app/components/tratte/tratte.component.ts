@@ -6,34 +6,38 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-tratte',
   templateUrl: './tratte.component.html',
-  styleUrls: ['./tratte.component.css']
+  styleUrls: ['./tratte.component.css'],
 })
 export class TratteComponent implements OnInit {
-  listaTratte : any[] = [];
+  listaTratte: any[] = [];
   sendID = new Subject<string>();
   sendID$ = this.sendID.asObservable();
+  activeTab: string = 'tab1';
 
-  constructor(private firebase : FirebaseService,
-    private router: Router){}
+  constructor(
+    private firebase: FirebaseService,
+    private router: Router,
+  ) {}
 
-
-  ngOnInit(){
-
+  ngOnInit() {
     this.firebase.getTratte().subscribe((data: any) => {
       this.listaTratte = data;
       // console.log(this.listaTratte)
     });
-
-
-    
   }
 
-sendInfo(trattaId: string) {
-      // console.log("Tentativo di inviare ID:", trattaId);
-      this.sendID.next(trattaId);
-      // console.log("ID passato a sendID:", trattaId);
-      this.router.navigateByUrl(`/tratta/${trattaId}`);
-    }
+  sendInfo(trattaId: string) {
+    // console.log("Tentativo di inviare ID:", trattaId);
+    this.sendID.next(trattaId);
+    // console.log("ID passato a sendID:", trattaId);
+    this.router.navigateByUrl(`/tratta/${trattaId}`);
+  }
 
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
 
+  isActiveTab(tab: string): boolean {
+    return this.activeTab === tab;
+  }
 }

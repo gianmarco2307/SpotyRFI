@@ -18,7 +18,6 @@ import {
 import { environment } from 'src/environments/environment';
 import { PlaylistPageComponent } from './components/playlist-page/playlist-page.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DisclaimerDialogComponent } from './components/disclaimer-dialog/disclaimer-dialog.component';
@@ -40,7 +39,6 @@ import { DisclaimerDialogComponent } from './components/disclaimer-dialog/discla
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    MatTabsModule,
     MatDialogModule,
     MatButtonModule
   ],
