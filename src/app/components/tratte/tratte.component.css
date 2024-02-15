@@ -13,6 +13,28 @@
   z-index:0;
 }
 
+fieldset {
+  width: 35%;
+  font-family: 'Merienda', cursive;
+  border: 0.15em black solid;
+  border-radius: 1em;
+  margin: 1em auto 3em 3em;
+}
+
+fieldset legend {
+  margin: 0.5em;
+  font-weight: 500;
+}
+
+td {
+  font-weight: 600;
+}
+
+td a {
+  color: currentColor;
+  text-decoration: none;
+}
+
 ul {
   width: 100%;
   display: flex;
