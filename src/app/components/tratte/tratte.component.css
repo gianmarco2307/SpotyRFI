@@ -18,7 +18,7 @@ fieldset {
   font-family: 'Merienda', cursive;
   border: 0.15em black solid;
   border-radius: 1em;
-  margin: 1em auto 3em 3em;
+  margin: 3em auto 3em 3em;
 }
 
 fieldset legend {
