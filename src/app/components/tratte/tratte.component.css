@@ -21,6 +21,34 @@ fieldset {
   margin: 3em auto 3em 3em;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  fieldset {
+    width: 40%
+  }
+}
+
+@media screen and (min-width: 281px) and (max-width: 767px) {
+  fieldset {
+    width: 70%;
+    margin: 3em auto 3em auto;
+  }
+  
+  ul {
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  fieldset {
+    width: 80%;
+    margin: 3em auto 3em auto;
+  }
+  
+  ul {
+    overflow: scroll;
+  }
+}
+
 fieldset legend {
   margin: 0.5em;
   font-weight: 500;
