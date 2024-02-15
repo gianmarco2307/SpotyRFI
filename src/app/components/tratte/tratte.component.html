@@ -49,7 +49,9 @@
               <a (click)="sendInfo(tratta.id)"
                 >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
               >
-              <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
+              <div class="intro" *ngIf="tratta.note !== ''">
+                {{ tratta.note }}
+              </div>
             </h3>
             <div class="intro">{{ tratta.gestore }}</div>
           </div>
@@ -67,7 +69,19 @@
             ></a>
           </div>
           <div class="gradient-overlay"></div>
-          <div class="color-overlay"></div>
+          <div class="color-overlay">
+            <span
+              class="material-symbols-outlined"
+              [ngClass]="{
+                FCE: tratta.gestore == 'FCE',
+                AMAT: tratta.gestore == 'AMAT',
+                atm: tratta.gestore == 'atm',
+                RFI: tratta.gestore == 'RFI'
+              }"
+            >
+              circle
+            </span>
+          </div>
         </div>
         <!-- /.blog-card -->
       </article>
@@ -93,7 +107,9 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
-                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
+                <div class="intro" *ngIf="tratta.note !== ''">
+                  {{ tratta.note }}
+                </div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
@@ -113,7 +129,19 @@
               ></a>
             </div>
             <div class="gradient-overlay"></div>
-            <div class="color-overlay"></div>
+            <div class="color-overlay">
+              <span
+                class="material-symbols-outlined"
+                [ngClass]="{
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm',
+                  RFI: tratta.gestore == 'RFI'
+                }"
+              >
+                circle
+              </span>
+            </div>
           </div>
           <!-- /.blog-card -->
         </article>
@@ -140,7 +168,9 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
-                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
+                <div class="intro" *ngIf="tratta.note !== ''">
+                  {{ tratta.note }}
+                </div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
@@ -160,7 +190,19 @@
               ></a>
             </div>
             <div class="gradient-overlay"></div>
-            <div class="color-overlay"></div>
+            <div class="color-overlay">
+              <span
+                class="material-symbols-outlined"
+                [ngClass]="{
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm',
+                  RFI: tratta.gestore == 'RFI'
+                }"
+              >
+                circle
+              </span>
+            </div>
           </div>
           <!-- /.blog-card -->
         </article>
@@ -187,7 +229,9 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
-                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
+                <div class="intro" *ngIf="tratta.note !== ''">
+                  {{ tratta.note }}
+                </div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
@@ -207,7 +251,19 @@
               ></a>
             </div>
             <div class="gradient-overlay"></div>
-            <div class="color-overlay"></div>
+            <div class="color-overlay">
+              <span
+                class="material-symbols-outlined"
+                [ngClass]="{
+                  FCE: tratta.gestore == 'FCE',
+                  AMAT: tratta.gestore == 'AMAT',
+                  atm: tratta.gestore == 'atm',
+                  RFI: tratta.gestore == 'RFI'
+                }"
+              >
+                circle
+              </span>
+            </div>
           </div>
           <!-- /.blog-card -->
         </article>

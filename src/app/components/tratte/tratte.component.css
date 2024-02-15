@@ -310,3 +310,47 @@ h3 .intro {
   font-size:0.8em
 }
 }
+
+.material-symbols-outlined.RFI{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: #006564;
+  margin: 0.5em;
+  float: left;
+}
+
+.material-symbols-outlined.FCE{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: #065DA8;
+  margin: 0.5em;
+  float: left;
+}
+
+.material-symbols-outlined.AMAT{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: #00A0C7;
+  margin: 0.5em;
+  float: left;
+}
+
+.material-symbols-outlined.atm{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  color: #D60B25;
+  margin: 0.5em;
+  float: left;
+}
