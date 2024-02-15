@@ -49,8 +49,8 @@
               <a (click)="sendInfo(tratta.id)"
                 >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
               >
+              <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
             </h3>
-            <!-- <div class="intro" *ngIf="tratta.note == ''">Inspiration</div> -->
             <div class="intro">{{ tratta.gestore }}</div>
           </div>
           <div class="card-info">
@@ -93,6 +93,7 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
+                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
@@ -139,6 +140,7 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
+                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
@@ -185,6 +187,7 @@
                 <a (click)="sendInfo(tratta.id)"
                   >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
                 >
+                <div class="intro" *ngIf="tratta.note !== ''">{{tratta.note}}</div>
               </h3>
               <div class="intro">
                 {{ tratta.gestore }}
