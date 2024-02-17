@@ -8,6 +8,7 @@ declare var $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  activeTab: string = 'tab1';
 
   ngAfterViewInit() {
     $(function () {
@@ -17,6 +18,14 @@ export class HomeComponent {
 
   openLink(url: string){
     window.open(url, "_blank");
+  }
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
+  isActiveTab(tab: string): boolean {
+    return this.activeTab === tab;
   }
 
   title = 'app';
