@@ -1,19 +1,19 @@
 <div id="picture"></div>
 
 <ul class="tabs">
-  <li [class.active]="isActiveTab('tab1')" (click)="setActiveTab('tab1')">
+  <li [class.active]="isActiveTab('benvenuto')" (click)="setActiveTab('benvenuto')">
     Benvenuto
   </li>
-  <li [class.active]="isActiveTab('tab2')" (click)="setActiveTab('tab2')">
+  <li [class.active]="isActiveTab('comeFunziona')" (click)="setActiveTab('comeFunziona')">
     Come funziona?
   </li>
-  <li [class.active]="isActiveTab('tab3')" (click)="setActiveTab('tab3')">
+  <li [class.active]="isActiveTab('percheSpotiRFI')" (click)="setActiveTab('percheSpotiRFI')">
     Perché SpotiRFI?
   </li>
 </ul>
 
 <div class="tab-content">
-  <div *ngIf="isActiveTab('tab1')">
+  <div *ngIf="isActiveTab('benvenuto')">
     <article>
       <!-- Prima immagine -->
       <section class="text">
@@ -48,7 +48,7 @@
       </section>
     </article>
   </div>
-  <div *ngIf="isActiveTab('tab2')">
+  <div *ngIf="isActiveTab('comeFunziona')">
     <article>
       <!-- Seconda immagine -->
       <section>
@@ -71,15 +71,9 @@
       </section>
     </article>
   </div>
-  <div *ngIf="isActiveTab('tab3')">
+  <div *ngIf="isActiveTab('percheSpotiRFI')">
     <article>
       <!-- Terza immagine -->
-      <section>
-        <img
-          src="https://www.stagniweb.it/altro/orizzf/636gioi0.jpg"
-          alt="Locomotiva E636.010 in transito a Gioiosa Marea(ME)"
-        />
-      </section>
       <section class="text">
         <h2>Perché SpotiRFI? 🤔</h2>
         <p class="mb-4">
@@ -94,6 +88,12 @@
           target="_blank"
           ><span class="material-symbols-outlined"> open_in_new </span></a
         >
+      </section>
+      <section>
+        <img
+          src="https://www.stagniweb.it/altro/orizzf/636gioi0.jpg"
+          alt="Locomotiva E636.010 in transito a Gioiosa Marea(ME)"
+        />
       </section>
     </article>    
   </div>

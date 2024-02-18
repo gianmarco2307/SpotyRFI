@@ -2,31 +2,30 @@
 
 /* Per le tabs */
 ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    list-style-type: none;
-    font-size: 16px;
-    font-family: 'Merienda', cursive;
-    font-weight: 600;
-    padding-inline-start: 0;
-  }
-  
-  li {
-    padding: 0.7em 2em 0.7em 2em;
-    cursor: pointer;
-  }
-  
-  li.active {
-    border-bottom: 0.1em #D62A42 solid;
-    color: #D62A42
-  }
-  
-  li:hover {
-    background-color: rgba(214, 42, 66, 0.04);
-  }
-  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+  font-size: 16px;
+  font-family: "Merienda", cursive;
+  font-weight: 600;
+  padding-inline-start: 0;
+}
+
+li {
+  padding: 0.7em 2em 0.7em 2em;
+  cursor: pointer;
+}
+
+li.active {
+  border-bottom: 0.1em #d62a42 solid;
+  color: #d62a42;
+}
+
+li:hover {
+  background-color: rgba(214, 42, 66, 0.04);
+}
 
 /* Per i contenuti */
 #popover {
@@ -58,7 +57,7 @@ section {
 }
 
 .text {
-    padding: 1em;
+  padding: 1em;
 }
 
 section > img {
@@ -66,7 +65,7 @@ section > img {
 }
 
 #picture {
-  background-image: url("src/assets/464Torrenova.JPG");
+  background-image: url("src/assets/464Torrenova-min.JPG");
   width: 100%;
   height: 82%;
   position: relative;
@@ -85,8 +84,8 @@ section > img {
     "opsz" 24;
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1300px) {
-}
+/* @media screen and (min-width: 1025px) and (max-width: 1300px) {
+} */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   article {
@@ -97,11 +96,25 @@ section > img {
 @media screen and (min-width: 281px) and (max-width: 767px) {
   article {
     width: 95%;
+    flex-flow: column wrap;
+  }
+
+  section {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 280px) {
   article {
     width: 97%;
+    flex-flow: column wrap;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  ul {
+    overflow: scroll;
   }
 }

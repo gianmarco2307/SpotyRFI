@@ -8,7 +8,7 @@ declare var $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  activeTab: string = 'tab1';
+  activeTab: string = 'benvenuto';
 
   ngAfterViewInit() {
     $(function () {
