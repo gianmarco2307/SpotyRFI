@@ -6,7 +6,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-playlist-page',
   templateUrl: './playlist-page.component.html',
-  styleUrls: ['./playlist-page.component.css']
+  styleUrls: ['./playlist-page.component.css'],
+  standalone: true
 })
 export class PlaylistPageComponent {
   id: String | null = null;

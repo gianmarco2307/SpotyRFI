@@ -4,7 +4,8 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-tabellone',
   templateUrl: './tabellone.component.html',
-  styleUrls: ['./tabellone.component.css']
+  styleUrls: ['./tabellone.component.css'],
+  standalone: true
 })
 export class TabelloneComponent {
   path = '';

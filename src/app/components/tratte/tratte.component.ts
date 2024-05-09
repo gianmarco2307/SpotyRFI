@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-tratte',
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
+  standalone: true
 })
 export class TratteComponent implements OnInit {
   listaTratte: any[] = [];

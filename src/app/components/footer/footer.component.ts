@@ -6,6 +6,7 @@ import { DisclaimerDialogComponent } from '../disclaimer-dialog/disclaimer-dialo
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
+  standalone: true
 })
 export class FooterComponent {
 
