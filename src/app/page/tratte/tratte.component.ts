@@ -16,7 +16,6 @@ export class TratteComponent implements OnInit {
   tratteService = inject(TratteService);
   firebaseService = inject(FirebaseService);
 
-  listaTratte: any[] = [];
   sendID = new Subject<string>();
   sendID$ = this.sendID.asObservable();
   activeTab = signal<string>('tutti');
@@ -33,7 +32,7 @@ export class TratteComponent implements OnInit {
     // console.log("Tentativo di inviare ID:", trattaId);
     this.sendID.next(trattaId);
     // console.log("ID passato a sendID:", trattaId);
-    this.router.navigateByUrl(`/tratte/${trattaId}`);
+    this.router.navigateByUrl(`tratte/${trattaId}`);
   }
 
   setActiveTab(tab: string) {

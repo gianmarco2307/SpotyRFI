@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseService } from 'src/app/services/firebase.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { TratteService } from 'src/app/services/tratte.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { Tratta } from 'src/app/model/tratta';
 
 @Component({
   selector: 'app-playlist-page',
@@ -12,20 +14,23 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
   styleUrls: ['./playlist-page.component.css'],
 })
 export class PlaylistPageComponent {
-  id: String | null = null;
-  tratte: any[] = [];
+  tratteService = inject(TratteService);
+  firebaseService = inject(FirebaseService);
+
+  id = signal<string | null>('');
+  tratte: Tratta[] = [];
   stations: any[][] =  [];
   trattaSrc!: SafeResourceUrl;          //questa variabile è d'appoggio
   srcs: SafeResourceUrl[] = [];         //array che raccoglie tutti i nostri url sanificati
   actualStation: string = '';
   actualLine: string = '';
 
-  constructor(protected fireServ: FirebaseService, private route: ActivatedRoute, private sanitizer: DomSanitizer){}
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer){}
 
   ngOnInit(){
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id.set(this.route.snapshot.paramMap.get('id'));
     
-    this.fireServ.getTratte().subscribe((data: any) => {
+    this.firebaseService.getTratte().subscribe((data: any) => {
       let i = 0;
       for(let tratta of data){        //con il ciclo prende l'src di ogni "tratta" 
         let temporaryStations: string[];

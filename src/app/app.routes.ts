@@ -18,12 +18,10 @@ export const routes: Routes = [
     {
         path: "tratte",
         component: TratteComponent,
-        children: [
-            {
-                path: ":id",
-                component: PlaylistPageComponent
-            },
-        ]
+    },
+    {
+        path: "tratte/:id",
+        component: PlaylistPageComponent
     },
     {
         path: "chisono",

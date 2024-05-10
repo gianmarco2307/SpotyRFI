@@ -1,21 +1,27 @@
-<div *ngFor="let tratta of tratte, let i=index" class="container">
-  <div *ngIf="tratta.id == id" class="incontainer">
-    <iframe
-      style="border-radius: 12px"
-      [src]="srcs[i]"
-      width="100%"
-      height="500"
-      frameBorder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-    ></iframe>
-    <br><br><br>
-    <ul>
-      <li *ngFor="let station of stations[i]" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.note)">{{station}}</li>
-    </ul>
+@for (tratta of tratte; track tratta.trattaId; let i=$index) {
+  <div class="container">
+    @if (tratta.trattaId == id()) {
+      <div class="incontainer">
+        <iframe
+          style="border-radius: 12px"
+          [src]="srcs[i]"
+          width="100%"
+          height="500"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <br><br><br>
+        <ul>
+          @for (station of stations[i]; track station) {
+            <li data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.note)">{{station}}</li>
+          }
+        </ul>
+      </div>
+    }
   </div>
-</div>
+}
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
