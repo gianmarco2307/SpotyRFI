@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, signal } from '@angular/core';
 
 declare var $: any;
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [NgIf],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  standalone: true
 })
 export class HomeComponent {
-  activeTab: string = 'benvenuto';
+  activeTab = signal<string>("benvenuto");
 
   ngAfterViewInit() {
     $(function () {
@@ -22,12 +24,10 @@ export class HomeComponent {
   }
 
   setActiveTab(tab: string) {
-    this.activeTab = tab;
+    this.activeTab.set(tab);
   }
 
   isActiveTab(tab: string): boolean {
-    return this.activeTab === tab;
+    return this.activeTab() === tab;
   }
-
-  title = 'app';
 }

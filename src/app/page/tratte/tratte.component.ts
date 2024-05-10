@@ -1,30 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-tratte',
+  standalone: true,
+  imports: [NgForOf, NgIf, NgClass],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
-  standalone: true
 })
 export class TratteComponent implements OnInit {
   listaTratte: any[] = [];
   sendID = new Subject<string>();
   sendID$ = this.sendID.asObservable();
-  activeTab: string = 'tab1';
+  activeTab = signal<string>("tutti");
 
   constructor(
-    private firebase: FirebaseService,
     private router: Router,
   ) {}
 
   ngOnInit() {
-    this.firebase.getTratte().subscribe((data: any) => {
-      this.listaTratte = data;
-      // console.log(this.listaTratte)
-    });
   }
 
   sendInfo(trattaId: string) {
@@ -35,10 +32,10 @@ export class TratteComponent implements OnInit {
   }
 
   setActiveTab(tab: string) {
-    this.activeTab = tab;
+    this.activeTab.set(tab);
   }
 
   isActiveTab(tab: string): boolean {
-    return this.activeTab === tab;
+    return this.activeTab() === tab;
   }
 }

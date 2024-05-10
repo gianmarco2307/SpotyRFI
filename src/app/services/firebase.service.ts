@@ -1,16 +1,19 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnInit, inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-
-  constructor(private firestore : AngularFirestore ) { }
+  firestore = inject(Firestore);
+  tratteCollection = collection(this.firestore, 'tratte');
 
   getTratte(): Observable<any[]> {
-    return this.firestore.collection('tratte').valueChanges();
+    return collectionData(this.tratteCollection, {
+      idField: 'id'
+    })
   }
   
 }

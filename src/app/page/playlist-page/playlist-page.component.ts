@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-playlist-page',
+  standalone: true,
+  imports: [NgIf, NgForOf, NgClass],
   templateUrl: './playlist-page.component.html',
   styleUrls: ['./playlist-page.component.css'],
-  standalone: true
 })
 export class PlaylistPageComponent {
   id: String | null = null;

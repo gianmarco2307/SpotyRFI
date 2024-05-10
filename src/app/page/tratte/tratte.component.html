@@ -1,5 +1,6 @@
 <div id="picture"></div>
 
+
 <fieldset>
   <legend>Legenda</legend>
   <table>
@@ -31,21 +32,37 @@
 </fieldset>
 
 <ul class="tabs">
-  <li [class.active]="isActiveTab('tab1')" (click)="setActiveTab('tab1')">
+  <li [class.active]="isActiveTab('tutti')" (click)="setActiveTab('tutti')">
     Tutti
   </li>
-  <li [class.active]="isActiveTab('tab2')" (click)="setActiveTab('tab2')">
+  <li [class.active]="isActiveTab('treno')" (click)="setActiveTab('treno')">
     Treno
   </li>
-  <li [class.active]="isActiveTab('tab3')" (click)="setActiveTab('tab3')">
+  <li [class.active]="isActiveTab('tram')" (click)="setActiveTab('tram')">
     Tram
   </li>
-  <li [class.active]="isActiveTab('tab4')" (click)="setActiveTab('tab4')">
+  <li [class.active]="isActiveTab('metro')" (click)="setActiveTab('metro')">
     Metro
   </li>
 </ul>
 
-<div class="tab-content">
+@if(isActiveTab('tutti')) {
+  <h2>tutti</h2>
+}
+
+@if(isActiveTab('treno')) {
+  <h2>treno</h2>
+}
+
+@if(isActiveTab('tram')) {
+  <h2>tram</h2>
+}
+
+@if(isActiveTab('metro')) {
+  <h2>metro</h2>
+}
+
+<!-- <div class="tab-content">
   <div *ngIf="isActiveTab('tab1')">
     <br />
     <section>
@@ -98,9 +115,11 @@
               circle
             </span>
           </div>
-        </div>
+        </div> -->
+
+
         <!-- /.blog-card -->
-      </article>
+      <!-- </article>
     </section>
   </div>
   <div *ngIf="isActiveTab('tab2')">
@@ -158,9 +177,11 @@
                 circle
               </span>
             </div>
-          </div>
+          </div> -->
           <!-- /.blog-card -->
-        </article>
+
+
+        <!-- </article>
       </ng-container>
     </section>
   </div>
@@ -219,9 +240,11 @@
                 circle
               </span>
             </div>
-          </div>
+          </div> -->
           <!-- /.blog-card -->
-        </article>
+
+
+        <!-- </article>
       </ng-container>
     </section>
   </div>
@@ -280,13 +303,13 @@
                 circle
               </span>
             </div>
-          </div>
+          </div> -->
           <!-- /.blog-card -->
-        </article>
+        <!-- </article>
       </ng-container>
     </section>
   </div>
-</div>
+</div> -->
 
 
 <article style="width: auto">
