@@ -1,0 +1,107 @@
+@if (activeTab == tratta.mezzo) {
+  <article>
+    <div
+      class="blog-card spring-fever"
+      [style.background]="'url(' + tratta.srcimg + ') center no-repeat'"
+    >
+      <div class="title-content">
+        <h3
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm'
+          }"
+        >
+          <a (click)="sendInfo(tratta.trattaId)"
+            >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
+          >
+          @if (tratta.note !== "") {
+            <div class="intro">{{ tratta.note }}</div>
+          }
+        </h3>
+        <div class="intro">{{ tratta.gestore }}</div>
+      </div>
+      <div class="card-info">
+        Vivi il viaggio da {{ tratta.partenza }} a {{ tratta.destinazione }}
+        {{ tratta.note }} con questa playlist
+        <a
+          (click)="sendInfo(tratta.trattaId)"
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm'
+          }"
+          >Playlist<span class="licon icon-arr icon-black"></span
+        ></a>
+      </div>
+      <div class="gradient-overlay"></div>
+      <div class="color-overlay">
+        <span
+          class="material-symbols-outlined"
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm',
+            RFI: tratta.gestore == 'RFI'
+          }"
+        >
+          circle
+        </span>
+      </div>
+    </div>
+  </article>
+}
+
+@if (activeTab == "tutti") {
+  <article>
+    <div
+      class="blog-card spring-fever"
+      [style.background]="'url(' + tratta.srcimg + ') center no-repeat'"
+    >
+      <div class="title-content">
+        <h3
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm'
+          }"
+        >
+          <a (click)="sendInfo(tratta.trattaId)"
+            >{{ tratta.partenza }} - {{ tratta.destinazione }}</a
+          >
+          @if (tratta.note !== "") {
+            <div class="intro">{{ tratta.note }}</div>
+          }
+        </h3>
+        <div class="intro">{{ tratta.gestore }}</div>
+      </div>
+      <div class="card-info">
+        Vivi il viaggio da {{ tratta.partenza }} a {{ tratta.destinazione }}
+        {{ tratta.note }} con questa playlist
+        <a
+          (click)="sendInfo(tratta.trattaId)"
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm'
+          }"
+          >Playlist<span class="licon icon-arr icon-black"></span
+        ></a>
+      </div>
+      <div class="gradient-overlay"></div>
+      <div class="color-overlay">
+        <span
+          class="material-symbols-outlined"
+          [ngClass]="{
+            FCE: tratta.gestore == 'FCE',
+            AMAT: tratta.gestore == 'AMAT',
+            atm: tratta.gestore == 'atm',
+            RFI: tratta.gestore == 'RFI'
+          }"
+        >
+          circle
+        </span>
+      </div>
+    </div>
+  </article>
+}

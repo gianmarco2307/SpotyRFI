@@ -4,7 +4,7 @@ export interface Tratta {
     destinazione: string;
     mezzo: string;
     gestore: string;
-    stations: string;
+    stations: Array<string>;
     src: string;
     srcimg: string;
     note: string;

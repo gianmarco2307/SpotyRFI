@@ -4,11 +4,12 @@ import { Router, RouterOutlet } from '@angular/router';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { TrattaCardComponent } from 'src/app/components/tratta-card/tratta-card.component';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })
@@ -16,23 +17,14 @@ export class TratteComponent implements OnInit {
   tratteService = inject(TratteService);
   firebaseService = inject(FirebaseService);
 
-  sendID = new Subject<string>();
-  sendID$ = this.sendID.asObservable();
-  activeTab = signal<string>('tutti');
+  activeTab = signal<string>('treno');
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
     this.firebaseService
       .getTratte()
       .subscribe((tratte) => this.tratteService.tratte.set(tratte));
-  }
-
-  sendInfo(trattaId: string) {
-    // console.log("Tentativo di inviare ID:", trattaId);
-    this.sendID.next(trattaId);
-    // console.log("ID passato a sendID:", trattaId);
-    this.router.navigateByUrl(`tratte/${trattaId}`);
   }
 
   setActiveTab(tab: string) {

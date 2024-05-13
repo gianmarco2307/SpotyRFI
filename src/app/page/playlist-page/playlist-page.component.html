@@ -1,4 +1,4 @@
-@for (tratta of tratte; track tratta.trattaId; let i=$index) {
+@for (tratta of tratte(); track tratta.trattaId; let i=$index) {
   <div class="container">
     @if (tratta.trattaId == id()) {
       <div class="incontainer">
@@ -14,8 +14,8 @@
         ></iframe>
         <br><br><br>
         <ul>
-          @for (station of stations[i]; track station) {
-            <li data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.note)">{{station}}</li>
+          @for (station of tratta.stations; track station) {
+            <li data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.gestore, tratta.note)">{{station}}</li>
           }
         </ul>
       </div>
@@ -28,7 +28,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Stazione di {{actualStation}}</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Stazione di {{actualStation()}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
