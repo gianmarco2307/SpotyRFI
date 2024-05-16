@@ -5,11 +5,12 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { TrattaCardComponent } from 'src/app/components/tratta-card/tratta-card.component';
+import { LoadingTrattaComponent } from 'src/app/components/loading-tratta/loading-tratta.component';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })

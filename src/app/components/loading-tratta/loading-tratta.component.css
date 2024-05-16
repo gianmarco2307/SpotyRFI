@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Tilt+Neon&family=Ubuntu:ital,wght@1,500&family=Young+Serif&display=swap');
+@import url("//fonts.googleapis.com/css?family=Abril+Fatface|Droid+Serif:400,700,400italic,700italic");
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: auto auto 4rem auto;
+    font-family: 'Merienda', cursive;
+    width: 500px;
+}
+
+.blog-card {
+  max-width: 475px;
+  width:100%;
+  height: 450px;
+  position: relative;
+  font-family: 'Droid Serif', serif;
+  color:#fff;
+  top: 20%;
+  right: 0;  
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background-size: 100%;
+  background-color: rgba(150, 147, 147, 0.203);
+}
+.title-content {
+  text-align: center;
+  margin: 170px 0 0 0;
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.blog-card h3 {
+  font-size: 1.9em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'Abril Fatface', serif;
+  margin-bottom: 0;
+  display:inline-block;
+}
+
+@keyframes changeLetter {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 80%;
+  }
+}
