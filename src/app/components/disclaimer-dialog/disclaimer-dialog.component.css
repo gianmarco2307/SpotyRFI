@@ -1,0 +1,4 @@
+:host ::ng-deep .p-button.p-button-icon-only {
+    background-color: transparent;
+    border-color: transparent;
+}

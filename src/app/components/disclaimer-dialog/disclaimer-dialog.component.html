@@ -1,7 +1,13 @@
-<h2 mat-dialog-title>Disclaimer</h2>
-<mat-dialog-content
-  >SpotiRFI è un sito indipendente e non è affiliato, sponsorizzato o approvato da Spotify o RFI. Non abbiamo l’intenzione di ledere in alcun modo la loro immagine o reputazione. Il nostro obiettivo è fornire un servizio utile e di qualità per i nostri utenti, nel rispetto dei diritti di proprietà intellettuale e delle normative vigenti.</mat-dialog-content
->
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Chiudi</button>
-</mat-dialog-actions>
+<p-button (onClick)="showDialog()" icon="pi pi-info-circle" />
+<p-dialog
+  header="Disclaimer" 
+  [(visible)]="visible" 
+  [modal]="true" 
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" 
+  [style]="{ width: '50vw' }" 
+  [draggable]="false" 
+  [resizable]="false">
+  <p>
+    SpotiRFI è un sito indipendente e non è affiliato, sponsorizzato o approvato da Spotify o RFI. Non abbiamo l’intenzione di ledere in alcun modo la loro immagine o reputazione. Il nostro obiettivo è fornire un servizio utile e di qualità per i nostri utenti, nel rispetto dei diritti di proprietà intellettuale e delle normative vigenti.
+  </p>
+</p-dialog>
