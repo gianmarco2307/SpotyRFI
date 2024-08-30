@@ -87,14 +87,6 @@ section > img {
   z-index: 0;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 24;
-}
-
 /* @media screen and (min-width: 1025px) and (max-width: 1300px) {
 } */
 
