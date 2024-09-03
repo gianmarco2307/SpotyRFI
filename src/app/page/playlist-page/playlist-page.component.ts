@@ -5,11 +5,12 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Tratta } from 'src/app/model/tratta';
+import { MonitorComponent } from 'src/app/components/monitor/monitor.component';
 
 @Component({
   selector: 'app-playlist-page',
   standalone: true,
-  imports: [NgIf, NgForOf, NgClass],
+  imports: [NgIf, NgForOf, NgClass, MonitorComponent],
   templateUrl: './playlist-page.component.html',
   styleUrls: ['./playlist-page.component.css'],
 })
