@@ -1,5 +1,15 @@
-@import '../node_modules/primeflex/primeflex.css';
+@import "../node_modules/primeflex/primeflex.css";
 @import "../node_modules/primeicons/primeicons.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  --RFI: #006564;
+  --FCE: #065DA8;
+  --AMAT: #00A0C7;
+  --atm: #D60B25;
+}
