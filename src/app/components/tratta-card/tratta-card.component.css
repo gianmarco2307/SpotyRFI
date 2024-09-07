@@ -104,17 +104,17 @@ h3:after {
   height: 2px;
   margin: 20px auto;
   border: 0;
-  background: #006564;
+  background: var(--RFI);
   transition:all 0.2s
 }
 h3.FCE:after {
-  background: #065DA8;
+  background: var(--FCE);
 }
 h3.AMAT:after {
-  background: #00A0C7;
+  background: var(--AMAT);
 }
 h3.atm:after {
-  background: #D60B25;
+  background: var(--atm);
 }
 
 @keyframes changeLetter {
@@ -177,17 +177,17 @@ h3 .intro {
   font-size:0.8em
 }
 .card-info a:hover{
-  background: #006564;
+  background: var(--RFI);
   color:#fff;
 }
 .card-info a.FCE:hover{
-  background: #065DA8;
+  background: var(--FCE);
 }
 .card-info a.AMAT:hover{
-  background: #00A0C7;
+  background: var(--AMAT);
 }
 .card-info a.atm:hover{
-  background: #D60B25;
+  background: var(--atm);
 }
 .card-info a:hover span{
    filter: brightness(10);
@@ -258,46 +258,30 @@ h3 .intro {
 }
 }
 
-.material-symbols-outlined.RFI{
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  color: #006564;
+.pi-circle-fill.RFI{
+  color: var(--RFI);
   margin: 0.5em;
   float: left;
+  font-size: 24px;
 }
 
-.material-symbols-outlined.FCE{
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  color: #065DA8;
+.pi-circle-fill.FCE{
+  color: var(--FCE);
   margin: 0.5em;
   float: left;
+  font-size: 24px;
 }
 
-.material-symbols-outlined.AMAT{
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  color: #00A0C7;
+.pi-circle-fill.AMAT{
+  color: var(--AMAT);
   margin: 0.5em;
   float: left;
+  font-size: 24px;
 }
 
-.material-symbols-outlined.atm{
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  color: #D60B25;
+.pi-circle-fill.atm{
+  color: var(--atm);
   margin: 0.5em;
   float: left;
+  font-size: 24px;
 }
