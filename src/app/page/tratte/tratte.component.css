@@ -21,9 +21,53 @@ fieldset {
   margin: 3em auto 3em 3em;
 }
 
+:host ::ng-deep .p-tabview .p-tabview-nav, :host ::ng-deep .p-tabview .p-tabview-panels {
+  background-color: inherit;
+  color: inherit;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav {
+  border: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+  font-size: larger;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Merienda", cursive;
+}
+
+:host ::ng-deep .p-highlight {
+  border-bottom: 0.1em #d62a42 solid;
+  color: #d62a42;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link:hover {
+  background-color: rgba(214, 42, 66, 0.04);
+}
+
+.tratte-panel {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   fieldset {
     width: 40%
+  }
+}
+
+@media screen and (width < 500px) {
+  :host ::ng-deep .p-tabview .p-tabview-nav {
+    justify-content: start;
   }
 }
 
@@ -32,20 +76,12 @@ fieldset {
     width: 70%;
     margin: 3em auto 3em auto;
   }
-  
-  ul {
-    overflow: scroll;
-  }
 }
 
 @media screen and (max-width: 280px) {
   fieldset {
     width: 80%;
     margin: 3em auto 3em auto;
-  }
-  
-  ul {
-    overflow: scroll;
   }
 }
 
@@ -63,32 +99,6 @@ td a {
   text-decoration: none;
 }
 
-ul {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  list-style-type: none;
-  font-size: 16px;
-  font-family: 'Merienda', cursive;
-  font-weight: 600;
-  padding-inline-start: 0;
-}
-
-li {
-  padding: 0.7em 2em 0.7em 2em;
-  cursor: pointer;
-}
-
-li.active {
-  border-bottom: 0.1em #D62A42 solid;
-  color: #D62A42
-}
-
-li:hover {
-  background-color: rgba(214, 42, 66, 0.04);
-}
-
 #article-disclaimer {
     display: flex;
     flex-flow: row wrap;
@@ -96,12 +106,6 @@ li:hover {
     margin: auto auto 4rem auto;
     font-family: 'Merienda', cursive;
     width: 500px;
-}
-
-section{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
 }
 
 #disclaimer {

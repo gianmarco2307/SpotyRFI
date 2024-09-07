@@ -46,35 +46,22 @@
   </table>
 </fieldset>
 
-<ul class="tabs">
-  <li [class.active]="isActiveTab('treno')" (click)="setActiveTab('treno')">
-    Treno
-  </li>
-  <li [class.active]="isActiveTab('tram')" (click)="setActiveTab('tram')">
-    Tram
-  </li>
-  <li [class.active]="isActiveTab('metro')" (click)="setActiveTab('metro')">
-    Metro
-  </li>
-  <li [class.active]="isActiveTab('tutti')" (click)="setActiveTab('tutti')">
-    Tutti
-  </li>
-</ul>
-
-<div class="tab-content">
-  <br />
-  <section>
-    @defer {
-      @for (tratta of tratteService.tratte(); track tratta.trattaId) {
-        <tratta-card [tratta]="tratta" [activeTab]="activeTab()"></tratta-card>
-      }
-    }
-
-    @loading(minimum 1s) {
-      <loading-tratta></loading-tratta>
-    }
-  </section>
-</div>
+<p-tabView (onChange)="onChange($event)">
+  @for (tab of tabs; track tab) {
+    <p-tabPanel header="{{tab}}">
+      <div class="tratte-panel">
+        @defer {
+          @for (tratta of tratteService.tratte(); track tratta.trattaId) {
+            <tratta-card [tratta]="tratta" [activeTab]="activeTab()"></tratta-card>
+          }
+        }
+        @loading(minimum 1s) {
+          <loading-tratta></loading-tratta>
+        }
+      </div>
+    </p-tabPanel>
+  }
+</p-tabView>
 
 <article id="article-disclaimer" style="width: auto">
   <div class="alert alert-warning" role="alert" id="disclaimer">

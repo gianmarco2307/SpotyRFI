@@ -1,16 +1,15 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { Subject } from 'rxjs';
-import { Router, RouterOutlet } from '@angular/router';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { TrattaCardComponent } from 'src/app/components/tratta-card/tratta-card.component';
 import { LoadingTrattaComponent } from 'src/app/components/loading-tratta/loading-tratta.component';
+import { TabViewModule } from 'primeng/tabview';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })
@@ -20,6 +19,8 @@ export class TratteComponent implements OnInit {
 
   activeTab = signal<string>('treno');
 
+  tabs = ['Treno', 'Tram', 'Metro', 'Tutti'];
+
   constructor() {}
 
   ngOnInit() {
@@ -28,11 +29,7 @@ export class TratteComponent implements OnInit {
       .subscribe((tratte) => this.tratteService.tratte.set(tratte));
   }
 
-  setActiveTab(tab: string) {
-    this.activeTab.set(tab);
-  }
-
-  isActiveTab(tab: string): boolean {
-    return this.activeTab() === tab;
+  onChange(event: any) {
+    this.activeTab.set(this.tabs[event.index].toLowerCase());
   }
 }
