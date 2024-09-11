@@ -1,3 +1,9 @@
+@if(loading) {
+  <div style="width: fit-content; margin: 7em auto;">
+    <p-progressSpinner ariaLabel="loading" />
+  </div>
+}
+
 @if(tratta() && sanitizedSrc){
   <div class="container">
     @if (tratta().trattaId == id()) {

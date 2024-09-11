@@ -6,11 +6,13 @@ import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Tratta } from 'src/app/model/tratta';
 import { MonitorComponent } from 'src/app/components/monitor/monitor.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+
 
 @Component({
   selector: 'app-playlist-page',
   standalone: true,
-  imports: [NgIf, NgForOf, NgClass, MonitorComponent],
+  imports: [NgIf, NgForOf, NgClass, MonitorComponent, ProgressSpinnerModule],
   templateUrl: './playlist-page.component.html',
   styleUrls: ['./playlist-page.component.css'],
 })
@@ -18,6 +20,7 @@ export class PlaylistPageComponent {
   tratteService = inject(TratteService);
   firebaseService = inject(FirebaseService);
 
+  loading: boolean = true;
   id = signal<string | null>('');
   tratta = signal<Tratta>({} as Tratta);
   sanitizedSrc!: SafeResourceUrl;
@@ -31,12 +34,14 @@ export class PlaylistPageComponent {
     this.id.set(this.route.snapshot.paramMap.get('id'));
     
     this.firebaseService.getTratte().subscribe((data: any) => {
+      this.loading = true;
       this.tratta.set(data.find((el: Tratta) => el.trattaId == this.id()));
       if(this.tratta() !== undefined) {
         this.sanitizedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.tratta().src);
       } else {
         this.router.navigate([`/${this.id()}`]);
       }
+      this.loading = false;
     })
   }
 
