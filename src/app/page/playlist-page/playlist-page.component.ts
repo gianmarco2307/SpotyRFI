@@ -35,7 +35,7 @@ export class PlaylistPageComponent {
       if(this.tratta() !== undefined) {
         this.sanitizedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.tratta().src);
       } else {
-        this.router.navigate(['/404']);
+        this.router.navigate([`/${this.id()}`]);
       }
     })
   }
