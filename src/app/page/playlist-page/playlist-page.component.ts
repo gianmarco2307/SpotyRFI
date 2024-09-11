@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
 import { TratteService } from 'src/app/services/tratte.service';
@@ -19,24 +19,24 @@ export class PlaylistPageComponent {
   firebaseService = inject(FirebaseService);
 
   id = signal<string | null>('');
-  tratte = signal<Tratta[]>([]);
-  trattaSrc!: SafeResourceUrl;          //questa variabile è d'appoggio
-  srcs: SafeResourceUrl[] = [];         //array che raccoglie tutti i nostri url sanificati
+  tratta = signal<Tratta>({} as Tratta);
+  sanitizedSrc!: SafeResourceUrl;
   actualStation = signal<string>('');
   actualManager = signal<string>('');
   actualLine = signal<string>('');
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer){}
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router){}
 
   ngOnInit(){
     this.id.set(this.route.snapshot.paramMap.get('id'));
     
     this.firebaseService.getTratte().subscribe((data: any) => {
-      for(let tratta of data){        //con il ciclo prende l'src di ogni "tratta" 
-        this.trattaSrc = this.sanitizer.bypassSecurityTrustResourceUrl(tratta.src);       //assegna a trattaSrc l'url sanificato
-        this.srcs.push(this.trattaSrc);           //pusho nell'array
+      this.tratta.set(data.find((el: Tratta) => el.trattaId == this.id()));
+      if(this.tratta() !== undefined) {
+        this.sanitizedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.tratta().src);
+      } else {
+        this.router.navigate(['/404']);
       }
-      this.tratte.set(data);
     })
   }
 

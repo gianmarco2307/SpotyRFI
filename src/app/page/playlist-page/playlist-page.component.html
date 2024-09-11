@@ -1,10 +1,10 @@
-@for (tratta of tratte(); track tratta.trattaId; let i=$index) {
+@if(tratta() && sanitizedSrc){
   <div class="container">
-    @if (tratta.trattaId == id()) {
+    @if (tratta().trattaId == id()) {
       <div class="incontainer">
         <iframe
           style="border-radius: 12px"
-          [src]="srcs[i]"
+          [src]="sanitizedSrc"
           width="100%"
           height="500"
           frameBorder="0"
@@ -12,10 +12,16 @@
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
-        <br><br><br>
+        <br /><br /><br />
         <ul>
-          @for (station of tratta.stations; track station) {
-            <li data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="stationToModal(station, tratta.gestore, tratta.note)">{{station}}</li>
+          @for (station of tratta().stations; track station) {
+            <li
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              (click)="stationToModal(station, tratta().gestore, tratta().note)"
+            >
+              {{ station }}
+            </li>
           }
         </ul>
       </div>
@@ -24,20 +30,37 @@
 }
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Stazione di {{actualStation()}}</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Stazione di {{ actualStation() }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <app-monitor />
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="openMaps()">Apri su Maps</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="openMaps()">
+          Apri su Maps
+        </button>
       </div>
     </div>
   </div>
