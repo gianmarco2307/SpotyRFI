@@ -1,92 +1,84 @@
-@import url('https://fonts.cdnfonts.com/css/futura-std-4');
+@import url("https://fonts.cdnfonts.com/css/futura-std-4");
 
-.container {
-    align-items: center;
-    width: 55%;
-    margin-bottom: 4em;
-    margin-top: 6em;
+.tratta-container {
+  width: 100%;
+  margin-bottom: 4em;
+  margin-top: 6em;
 }
 
-.incontainer {
-    align-items: center;
-    font-family: 'Futura Std', sans-serif;
-    font-weight: bold;
-    font-size:x-large;
+.tratta-incontainer {
+  font-family: "Futura Std", sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  display: flex;
+  flex-flow: row-reverse wrap;
 }
 
-.map{
-    display: block;
-    margin: auto;
-    width: 75%;
-    height: auto;
+.iframe {
+  flex: 1;
+  text-align: center;
+}
+
+.line {
+  flex: 1;
+}
+
+.map {
+  display: block;
+  margin: auto;
+  width: 75%;
+  height: auto;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin: auto;
-    width: max-content;
-  }
-  
-  li::before {
-    content: "";
-    border-radius: 50%;
-    width: 0.625em; /* 10px/16 */
-    height: 0.625em; /* 10px/16 */
-    background: red;
-    display: inline-block;
-    margin-right: 0.625em; /* 10px/16 */
-  }
-  
-  li {
-    margin: 0.625em 0; /* 10px/16 */
-    position: relative;
-    cursor: pointer;
-  }
-  
-  li::after {
-    content: "";
-    position: absolute;
-    width: 0.125em; /* 2px/16 */
-    height: calc(100% + 0.625em); /* 10px/16 */
-    background: red;
-    left: 0.25em; /* 4px/16 */
-    top: 0.625em; /* 10px/16 */
-  }
-  
-  li:first-child::after {
-    top: 0.625em; /* 10px/16 */
-  }
-  
-  li:last-child::after {
-    height: 0;
-  }
-
-
-@media screen and (min-width: 1025px) and (max-width: 1300px) {
-    .container {
-        align-items: center;
-        width: 72%;
-    }
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  width: max-content;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        align-items: center;
-        width: 77%;
-    }
+li::before {
+  content: "";
+  border-radius: 50%;
+  width: 0.625em; /* 10px/16 */
+  height: 0.625em; /* 10px/16 */
+  background: red;
+  display: inline-block;
+  margin-right: 0.625em; /* 10px/16 */
 }
 
-@media screen and (min-width: 281px) and (max-width: 767px) {
-    .container {
-        align-items: center;
-        width: 90%;
-    }
+li {
+  margin: 0.625em 0; /* 10px/16 */
+  position: relative;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 280px) {
-    .container {
-        align-items: center;
-        width: 97%;
-    }    
+li::after {
+  content: "";
+  position: absolute;
+  width: 0.125em; /* 2px/16 */
+  height: calc(100% + 0.625em); /* 10px/16 */
+  background: red;
+  left: 0.25em; /* 4px/16 */
+  top: 0.625em; /* 10px/16 */
+}
+
+li:first-child::after {
+  top: 0.625em; /* 10px/16 */
+}
+
+li:last-child::after {
+  height: 0;
+}
+
+@media screen and (280px < width < 768px) {
+  .tratta-incontainer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width < 281px) {
+  .tratta-incontainer {
+    flex-direction: column;
+  }
 }
