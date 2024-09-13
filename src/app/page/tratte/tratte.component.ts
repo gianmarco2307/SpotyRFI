@@ -5,11 +5,13 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { TrattaCardComponent } from 'src/app/components/tratta-card/tratta-card.component';
 import { LoadingTrattaComponent } from 'src/app/components/loading-tratta/loading-tratta.component';
 import { TabViewModule } from 'primeng/tabview';
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule, SidebarModule, ButtonModule],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })
@@ -18,6 +20,7 @@ export class TratteComponent implements OnInit {
   firebaseService = inject(FirebaseService);
 
   activeTab = signal<string>('treno');
+  sidebarVisible = false;
 
   tabs = ['Treno', 'Tram', 'Metro', 'Tutti'];
 

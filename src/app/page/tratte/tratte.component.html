@@ -1,7 +1,45 @@
 <div id="picture"></div>
 
-<fieldset>
-  <legend>Legenda</legend>
+<p-tabView (onChange)="onChange($event)">
+  @for (tab of tabs; track tab) {
+    <p-tabPanel header="{{tab}}">
+      <p-button 
+        type="button" 
+        class="mr-2" 
+        (onClick)="sidebarVisible = true" 
+        icon="pi pi-info-circle" />
+      <div class="tratte-panel">
+        @defer {
+          @for (tratta of tratteService.tratte(); track tratta.trattaId) {
+            <tratta-card [tratta]="tratta" [activeTab]="activeTab()"></tratta-card>
+          }
+        }
+        @loading(minimum 1s) {
+          <loading-tratta></loading-tratta>
+        }
+      </div>
+    </p-tabPanel>
+  }
+</p-tabView>
+
+<article id="article-disclaimer">
+  <div class="alert alert-warning" role="alert" id="disclaimer">
+    <p>
+      <strong>Disclaimer :</strong> Le canzoni presentate su SpotiRFI sono state
+      scelte esclusivamente sulla base dell'adeguatezza del titolo con il nome
+      delle stazioni ferroviarie. La scelta di una canzone non implica
+      un'approvazione o un'adesione al testo, al significato o a qualsiasi altro
+      aspetto della canzone stessa. Le canzoni sono fornite solo a scopo di
+      intrattenimento e non intendono rappresentare o riflettere le opinioni di
+      SpotiRFI.
+    </p>
+  </div>
+</article>
+
+<p-sidebar [(visible)]="sidebarVisible" position="bottom">
+  <ng-template pTemplate="header">
+    <span class="font-semibold text-xl">Legenda</span>
+  </ng-template>
   <table>
     <tr>
       <td>
@@ -44,35 +82,4 @@
       </td>
     </tr>
   </table>
-</fieldset>
-
-<p-tabView (onChange)="onChange($event)">
-  @for (tab of tabs; track tab) {
-    <p-tabPanel header="{{tab}}">
-      <div class="tratte-panel">
-        @defer {
-          @for (tratta of tratteService.tratte(); track tratta.trattaId) {
-            <tratta-card [tratta]="tratta" [activeTab]="activeTab()"></tratta-card>
-          }
-        }
-        @loading(minimum 1s) {
-          <loading-tratta></loading-tratta>
-        }
-      </div>
-    </p-tabPanel>
-  }
-</p-tabView>
-
-<article id="article-disclaimer" style="width: auto">
-  <div class="alert alert-warning" role="alert" id="disclaimer">
-    <p>
-      <strong>Disclaimer :</strong> Le canzoni presentate su SpotiRFI sono state
-      scelte esclusivamente sulla base dell'adeguatezza del titolo con il nome
-      delle stazioni ferroviarie. La scelta di una canzone non implica
-      un'approvazione o un'adesione al testo, al significato o a qualsiasi altro
-      aspetto della canzone stessa. Le canzoni sono fornite solo a scopo di
-      intrattenimento e non intendono rappresentare o riflettere le opinioni di
-      SpotiRFI.
-    </p>
-  </div>
-</article>
+</p-sidebar>

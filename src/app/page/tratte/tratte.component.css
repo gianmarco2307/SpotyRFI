@@ -13,14 +13,6 @@
   z-index:0;
 }
 
-fieldset {
-  width: 35%;
-  font-family: 'Merienda', cursive;
-  border: 0.15em black solid;
-  border-radius: 1em;
-  margin: 3em auto 3em 3em;
-}
-
 :host ::ng-deep .p-tabview .p-tabview-nav, :host ::ng-deep .p-tabview .p-tabview-panels {
   background-color: inherit;
   color: inherit;
@@ -59,11 +51,11 @@ fieldset {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
   fieldset {
     width: 40%
   }
-}
+} */
 
 @media screen and (width < 500px) {
   :host ::ng-deep .p-tabview .p-tabview-nav {
@@ -71,24 +63,19 @@ fieldset {
   }
 }
 
-@media screen and (min-width: 281px) and (max-width: 767px) {
+/* @media screen and (min-width: 281px) and (max-width: 767px) {
   fieldset {
     width: 70%;
     margin: 3em auto 3em auto;
   }
-}
+} */
 
-@media screen and (max-width: 280px) {
+/* @media screen and (max-width: 280px) {
   fieldset {
     width: 80%;
     margin: 3em auto 3em auto;
   }
-}
-
-fieldset legend {
-  margin: 0.5em;
-  font-weight: 500;
-}
+} */
 
 td {
   font-weight: 600;
@@ -103,13 +90,11 @@ td a {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    margin: auto auto 4rem auto;
     font-family: 'Merienda', cursive;
-    width: 500px;
+    width: 50%;
 }
 
 #disclaimer {
-    margin: 4em 1em 3.5em 1em;
     text-align: justify;
 }
 
@@ -122,4 +107,26 @@ p {
   font-size: 20px;
   margin: 0.5em;
   float: left;
+}
+
+:host ::ng-deep .p-sidebar {
+  height: fit-content;
+}
+
+:host ::ng-deep .p-sidebar-header {
+  justify-content: space-between;
+}
+
+:host ::ng-deep .p-button {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  .pi {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+:host ::ng-deep .p-button:focus {
+  box-shadow: none;
 }
