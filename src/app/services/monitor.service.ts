@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,11 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class MonitorService {
   private apiUrl =
-    'https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=2018&arrivals=False';
+    'https://iechub.rfi.it/ArriviPartenze/ArrivalsDepartures/Monitor?placeId=';
 
-  constructor(private http: HttpClient) {}
+  getArrivals(id: number) {
+    window.open(`${this.apiUrl}${id}&arrivals=True`, '_blank');
+  }
 
-  getHtml(): Promise<string | undefined> {
-    return this.http.get(this.apiUrl, { responseType: 'text' }).toPromise();
+  getDepartures(id: number) {
+    window.open(`${this.apiUrl}${id}&arrivals=False`, '_blank');
   }
 }
