@@ -6,12 +6,15 @@ import { TratteService } from 'src/app/services/tratte.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Tratta } from 'src/app/model/tratta';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MonitorService } from 'src/app/services/monitor.service';
+import { ButtonModule } from 'primeng/button';
+import { Station } from 'src/app/model/station';
 
 
 @Component({
   selector: 'app-playlist-page',
   standalone: true,
-  imports: [NgIf, NgForOf, NgClass, ProgressSpinnerModule],
+  imports: [NgIf, NgForOf, NgClass, ProgressSpinnerModule, ButtonModule],
   templateUrl: './playlist-page.component.html',
   styleUrls: ['./playlist-page.component.css'],
 })
@@ -23,11 +26,11 @@ export class PlaylistPageComponent {
   id = signal<string | null>('');
   tratta = signal<Tratta>({} as Tratta);
   sanitizedSrc!: SafeResourceUrl;
-  actualStation = signal<string>('');
+  actualStation = signal<Station>({} as Station);
   actualManager = signal<string>('');
   actualLine = signal<string>('');
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router){}
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router, private monitor: MonitorService){}
 
   ngOnInit(){
     this.id.set(this.route.snapshot.paramMap.get('id'));
@@ -44,7 +47,7 @@ export class PlaylistPageComponent {
     })
   }
 
-  stationToModal(clickedStation: string, manager: string, line: string){
+  stationToModal(clickedStation: Station, manager: string, line: string){
     this.actualStation.set(clickedStation);
     this.actualManager.set(manager);
     this.actualLine.set(line);
@@ -54,7 +57,7 @@ export class PlaylistPageComponent {
     let url!: string;
     let daCercare!: string;
 
-    console.log(this.actualLine() + ' ' + this.actualStation() + ' ' + this.actualManager());
+    // console.log(this.actualLine() + ' ' + this.actualStation() + ' ' + this.actualManager());
     if(this.actualManager() == 'AMAT'){
       daCercare = `fermata ${this.actualManager()} tram ${this.actualManager()} di ${this.actualStation()} Palermo`;
     } else if(this.actualManager() == 'atm') {
@@ -64,5 +67,13 @@ export class PlaylistPageComponent {
     }
     url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(daCercare);
     window.open(url, '_blank');
+  }
+
+  openArrivals(){
+    this.monitor.getArrivals(this.actualStation().stationId);
+  }
+
+  openDepartures(){
+    this.monitor.getDepartures(this.actualStation().stationId);
   }
 }

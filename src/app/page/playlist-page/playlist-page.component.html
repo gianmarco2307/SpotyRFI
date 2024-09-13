@@ -1,16 +1,16 @@
-@if(loading) {
-  <div style="width: fit-content; margin: 7em auto;">
+@if (loading) {
+  <div style="width: fit-content; margin: 7em auto">
     <p-progressSpinner ariaLabel="loading" />
   </div>
 }
 
-@if(tratta() && sanitizedSrc){
+@if (tratta() && sanitizedSrc) {
   <div class="tratta-container">
     @if (tratta().trattaId == id()) {
       <div class="tratta-incontainer">
         <div class="iframe">
           <iframe
-            style="border-radius: 12px; position: sticky; top: 4em;"
+            style="border-radius: 12px; position: sticky; top: 4em"
             [src]="sanitizedSrc"
             width="98%"
             height="500"
@@ -26,9 +26,11 @@
               <li
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="stationToModal(station, tratta().gestore, tratta().note)"
+                (click)="
+                  stationToModal(station, tratta().gestore, tratta().note)
+                "
               >
-                {{ station }}
+                {{ station.station }}
               </li>
             }
           </ul>
@@ -50,7 +52,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Stazione di {{ actualStation() }}
+          Stazione di {{ actualStation().station }}
         </h1>
         <button
           type="button"
@@ -60,7 +62,16 @@
         ></button>
       </div>
       <div class="modal-body">
-        ...
+        @if (tratta().gestore === "RFI") {
+          <p-button
+            label="Arrivi"
+            (onClick)="openArrivals()"
+          />
+          <p-button
+            label="Partenze"
+            (onClick)="openDepartures()"
+          />
+        }
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
