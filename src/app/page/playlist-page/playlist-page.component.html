@@ -41,46 +41,27 @@
 }
 
 <!-- Modal -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
+
+<p-dialog [header]="modalHeader()" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+  @if (tratta().gestore === "RFI") {
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Stazione di {{ actualStation().station }}
-        </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        @if (tratta().gestore === "RFI") {
-          <p-button
-            label="Arrivi"
-            (onClick)="openArrivals()"
-          />
-          <p-button
-            label="Partenze"
-            (onClick)="openDepartures()"
-          />
-        }
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary" (click)="openMaps()">
-          Apri su Maps
-        </button>
-      </div>
+      <p-button
+        label="Arrivi"
+        icon="pi pi-external-link"
+        (onClick)="openArrivals()"
+      />
+      <p-button
+        label="Partenze"
+        icon="pi pi-external-link"
+        (onClick)="openDepartures()"
+      />
     </div>
-  </div>
-</div>
+  }
+  <ng-template pTemplate="footer">
+    <p-button
+        label="Apri su Maps"
+        icon="pi pi-map-marker"
+        (onClick)="openMaps()"
+      />
+  </ng-template>
+</p-dialog>

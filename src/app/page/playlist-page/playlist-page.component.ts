@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
@@ -9,12 +9,13 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MonitorService } from 'src/app/services/monitor.service';
 import { ButtonModule } from 'primeng/button';
 import { Station } from 'src/app/model/station';
+import { DialogModule } from 'primeng/dialog';
 
 
 @Component({
   selector: 'app-playlist-page',
   standalone: true,
-  imports: [NgIf, NgForOf, NgClass, ProgressSpinnerModule, ButtonModule],
+  imports: [NgIf, NgForOf, NgClass, ProgressSpinnerModule, ButtonModule, DialogModule],
   templateUrl: './playlist-page.component.html',
   styleUrls: ['./playlist-page.component.css'],
 })
@@ -29,6 +30,10 @@ export class PlaylistPageComponent {
   actualStation = signal<Station>({} as Station);
   actualManager = signal<string>('');
   actualLine = signal<string>('');
+  modalHeader = computed<string>(() => {
+    return `Stazione di ${this.actualStation().station}`;
+  });
+  visible = false;
 
   constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router, private monitor: MonitorService){}
 
@@ -51,6 +56,7 @@ export class PlaylistPageComponent {
     this.actualStation.set(clickedStation);
     this.actualManager.set(manager);
     this.actualLine.set(line);
+    this.visible = true;
   }
 
   openMaps(){
@@ -59,11 +65,11 @@ export class PlaylistPageComponent {
 
     // console.log(this.actualLine() + ' ' + this.actualStation() + ' ' + this.actualManager());
     if(this.actualManager() == 'AMAT'){
-      daCercare = `fermata ${this.actualManager()} tram ${this.actualManager()} di ${this.actualStation()} Palermo`;
+      daCercare = `fermata ${this.actualManager()} tram ${this.actualManager()} di ${this.actualStation().station} Palermo`;
     } else if(this.actualManager() == 'atm') {
-      daCercare = `fermata ${this.actualManager()} tram ${this.actualLine()} di ${this.actualStation()} Messina`;
+      daCercare = `fermata ${this.actualManager()} tram ${this.actualLine()} di ${this.actualStation().station} Messina`;
     } else {
-      daCercare = `stazione ${this.actualManager()} di ${this.actualStation()}`;
+      daCercare = `stazione ${this.actualManager()} di ${this.actualStation().station}`;
     }
     url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(daCercare);
     window.open(url, '_blank');

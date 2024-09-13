@@ -71,9 +71,42 @@ li:last-child::after {
   height: 0;
 }
 
+.modal-content {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+:host ::ng-deep .p-dialog-content .p-button {
+  width: 150px;
+}
+
+:host ::ng-deep .p-dialog-content .p-button, :host ::ng-deep .p-dialog-footer .p-button {
+  background-color: var(--RFI);
+  border-radius: 6px;
+  border-color: var(--RFI);
+}
+
+:host ::ng-deep .p-dialog-content .p-button:focus, :host ::ng-deep .p-dialog-footer .p-button:focus {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--RFI), 0 1px 2px 0 black
+}
+
 @media screen and (280px < width < 768px) {
   .tratta-incontainer {
     flex-direction: column;
+  }
+}
+
+@media screen and (width < 415px) {
+  .modal-content {
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+
+  :host ::ng-deep .p-dialog-content .p-button, :host ::ng-deep .p-dialog-footer .p-button {
+    margin: 0.5em auto;
   }
 }
 
