@@ -7,11 +7,12 @@ import { LoadingTrattaComponent } from 'src/app/components/loading-tratta/loadin
 import { TabViewModule } from 'primeng/tabview';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule, SidebarModule, ButtonModule],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule, SidebarModule, ButtonModule, DialogModule],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })
@@ -21,6 +22,7 @@ export class TratteComponent implements OnInit {
 
   activeTab = signal<string>('treno');
   sidebarVisible = false;
+  disclaimerVisible = false;
 
   tabs = ['Treno', 'Tram', 'Metro', 'Tutti'];
 
