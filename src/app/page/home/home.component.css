@@ -17,6 +17,12 @@
   padding: 0;
 }
 
+@media screen and (width < 460px) {
+  :host ::ng-deep .p-tabview .p-tabview-nav {
+    justify-content: start;
+  }
+}
+
 :host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
   border: none;
   background-color: inherit;
