@@ -1,11 +1,19 @@
 <div id="picture"></div>
 
 <p-tabView (onChange)="onChange($event)">
-  <div style="position: fixed; bottom: 20px; right: 20px; background-color: var(--RFI); width: fit-content; height: fit-content; border-radius: 50%; z-index: 1000;">
-    <p-button 
-      type="button" 
-      (onClick)="sidebarVisible = true" 
-      icon="pi pi-info-circle" />
+  <div class="buttons-div">
+    <div style="background-color: var(--RFI); width: fit-content; height: fit-content; border-radius: 50%;">
+      <p-button 
+        type="button" 
+        (onClick)="sidebarVisible = true" 
+        icon="pi pi-info-circle" />
+    </div>
+    <div style="background-color: white; color: var(--atm); width: fit-content; height: fit-content; border-radius: 50%">
+      <p-button 
+        type="button" 
+        (onClick)="disclaimerVisible = true" 
+        icon="pi pi-exclamation-circle" />
+    </div>
   </div>
   @for (tab of tabs; track tab) {
     <p-tabPanel header="{{tab}}">
@@ -22,7 +30,6 @@
       </div>
     </p-tabPanel>
   }
-  <h4 (click)="disclaimerVisible = true" class="disclaimer">Disclaimer</h4>
 </p-tabView>
 
 <p-dialog header="Disclaimer" [modal]="true" [(visible)]="disclaimerVisible" [style]="{ width: '25rem' }">
