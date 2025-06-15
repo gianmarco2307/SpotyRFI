@@ -96,6 +96,7 @@ p {
   color: inherit;
   background-color: inherit;
   border: none;
+  border-radius: 50%;
   .pi {
     font-size: 24px;
     font-weight: 600;

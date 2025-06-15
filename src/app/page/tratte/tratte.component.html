@@ -1,13 +1,15 @@
 <div id="picture"></div>
 
 <p-tabView (onChange)="onChange($event)">
+  <div style="position: fixed; bottom: 20px; right: 20px; background-color: var(--RFI); width: fit-content; height: fit-content; border-radius: 50%; z-index: 1000;">
+    <p-button 
+      type="button" 
+      (onClick)="sidebarVisible = true" 
+      icon="pi pi-info-circle" />
+  </div>
   @for (tab of tabs; track tab) {
     <p-tabPanel header="{{tab}}">
-      <p-button 
-        type="button" 
-        class="mr-2" 
-        (onClick)="sidebarVisible = true" 
-        icon="pi pi-info-circle" />
+     
       <div class="tratte-panel">
         @defer {
           @for (tratta of tratteService.tratte(); track tratta.trattaId) {

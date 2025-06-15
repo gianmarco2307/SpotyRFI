@@ -8,11 +8,12 @@ import { TabViewModule } from 'primeng/tabview';
 import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { SpeedDialModule } from 'primeng/speeddial';
 
 @Component({
   selector: 'app-tratte',
   standalone: true,
-  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule, SidebarModule, ButtonModule, DialogModule],
+  imports: [NgForOf, NgIf, NgClass, TrattaCardComponent, LoadingTrattaComponent, TabViewModule, SidebarModule, ButtonModule, DialogModule, SpeedDialModule],
   templateUrl: './tratte.component.html',
   styleUrls: ['./tratte.component.css'],
 })
