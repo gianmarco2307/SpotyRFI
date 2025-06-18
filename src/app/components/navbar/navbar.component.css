@@ -1,13 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&family=Tilt+Neon&family=Ubuntu:ital,wght@1,500&family=Young+Serif&display=swap');
 
-#shareButton {
-    color: transparent;
-    background-color: transparent;
-    border: transparent;
-    float: right;
-}
-
-nav {
+:host ::ng-deep .p-menubar {
+    background: rgba(43, 48, 53, 1);
+    border-color: rgba(43, 48, 53, 1);
+    border-radius: 0;
     font-family: 'Merienda', cursive;
     font-size: 16px;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-content .p-menuitem-link {
+    color: rgba(255, 255, 255, .55);
+    font-weight: 500;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover {
+    background: rgba(255, 255, 255, 0.315) !important;;
+    color: rgba(43, 48, 53, 1) !important;
+}
+
+:host ::ng-deep .p-menubar .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+    background: rgba(255, 255, 255, 0.315) !important;;
+    color: rgba(43, 48, 53, 1) !important;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-button:hover {
+    background: rgba(255, 255, 255, 0.315) !important;;
+    color: rgba(43, 48, 53, 1) !important;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(43, 48, 53, 1);
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list {
+    background: rgba(43, 48, 53, 0.8);
+    color: rgba(43, 48, 53, 1);
 }

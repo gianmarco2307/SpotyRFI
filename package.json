@@ -22,7 +22,6 @@
     "@angular/router": "^17.3.8",
     "@firebase/firestore": "^4.4.0",
     "@types/jquery": "^3.5.27",
-    "bootstrap": "^5.3.2",
     "firebase": "^10.7.0",
     "jquery": "^3.7.1",
     "primeflex": "^3.3.1",

@@ -248,7 +248,49 @@ h3 .intro {
   margin-top:40px
 }
 .blog-card{
+  width: 400px;
   height:300px
+}
+.blog-card .color-overlay {
+  width: 400px;
+  height: 300px;
+}
+.blog-card .gradient-overlay {
+  width: 400px;
+  height: 275px;
+}
+.blog-card h3{
+  font-size:1.3em
+}
+.intro{
+  font-size:0.8em
+}
+}
+
+@media (max-width:400px){
+  .utility-info li:last-of-type{
+    width:100%
+  }
+  .card-info{
+    display:none
+  }
+  .blog-card:hover .title-content,.title-content{
+  margin-top:40px
+}
+.blog-card{
+  height:300px;
+  width: 300px;
+}
+.blog-card .color-overlay {
+  height: 300px;
+  width: 300px;
+}
+.blog-card .gradient-overlay {
+  height: 275px;
+  width: 300px;
+}
+article {
+    width: 300px;
 }
 .blog-card h3{
   font-size:1.3em
