@@ -183,3 +183,7 @@ footer a:hover {
 		line-height: 25px;
 	}
 }
+
+footer {
+	background: rgba(43, 48, 53, 1);
+}
