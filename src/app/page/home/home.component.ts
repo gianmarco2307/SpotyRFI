@@ -1,22 +1,14 @@
-import { NgIf } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { TabViewModule } from 'primeng/tabview';
+import { TooltipModule } from 'primeng/tooltip';
 
-declare var $: any;
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgIf, TabViewModule],
+  imports: [TabViewModule, TooltipModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  activeTab = signal<string>("benvenuto");
-
-  ngAfterViewInit() {
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
-  }
 }
