@@ -1,45 +1,40 @@
-<link href="https://fonts.cdnfonts.com/css/caros" rel="stylesheet">
-                
+<link href="https://fonts.cdnfonts.com/css/caros" rel="stylesheet" />
 
-<div class="background">
-    <br>
-    <!-- PRIMA RIGA -->
-    <div class="riga">
-        <div class="binario">
-            <h2><b>1</b></h2>
-        </div>
-        <div class="destinazione">
-            <p><b>destinazione </b> <i>destination</i></p>
-            <div class="pdest">
-                <h4>{{path}}</h4>
-            </div>
-        </div>
+<div class="tabellone">
+  <div class="area-binario">
+    <p class="etichetta"><b>binario</b> <i>platform</i></p>
+    <p class="numero-binario">1</p>
+  </div>
+
+  <div class="area-destino">
+    <p class="etichetta"><b>destinazione</b> <i>destination</i></p>
+    <div class="display display-dest">
+      <h4>{{ path }}</h4>
     </div>
-    <br>
-    <!-- SECONDA RIGA -->
-    <div class="riga">
-        <div class="treno">
-            <p><b>treno </b> <i>train</i></p>
-            <div class="ptreno">
-                <h4>SPOTIRFI</h4>
-                <h5>REG 21886</h5>
-            </div>
-        </div>
-        <div class="partenza">
-            <p><b>partenza </b> <i>departure</i></p>
-            <div class="ppart">
-                <h4>CANCELLATO</h4>
-            </div>
-        </div>
+  </div>
+
+  <div class="area-treno">
+    <p class="etichetta"><b>treno</b> <i>train</i></p>
+    <div
+      class="display display-treno"
+      style="flex-direction: column; align-items: flex-start"
+    >
+      <h4>SPOTIRFI</h4>
+      <h5>REG 21886</h5>
     </div>
-    <br>
-    <!-- TERZA RIGA -->
-    <div class="riga">
-        <div class="info">
-            <p><b>informazioni </b> <i>informations</i></p>
-            <div class="pinfo">
-                <h4>E' SEVERAMENTE VIETATO ATTRAVERSARE LA LINEA GIALLA</h4>
-            </div>
-        </div>
+  </div>
+
+  <div class="area-partenza">
+    <p class="etichetta"><b>partenza</b> <i>departure</i></p>
+    <div class="display display-part">
+      <h4>CANCELLATO</h4>
     </div>
+  </div>
+
+  <div class="area-warn">
+    <p class="etichetta"><b>informazioni</b> <i>information</i></p>
+    <div class="display display-warn">
+      <h4>E' SEVERAMENTE VIETATO ATTRAVERSARE LA LINEA GIALLA</h4>
+    </div>
+  </div>
 </div>
