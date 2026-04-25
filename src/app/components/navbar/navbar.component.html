@@ -1,18 +1,35 @@
-<p-menubar [model]="items" [style]="{'position': 'fixed', 'zIndex': '1000', 'width': '100%', 'top': '0'}">
+<p-menubar
+  [model]="items"
+  [style]="{ position: 'fixed', zIndex: '1000', width: '100%', top: '0' }"
+>
   <ng-template pTemplate="start">
     <a class="navbar-brand" routerLink="home" class="pr-2">
-      <img src="assets/nuovologocompatto.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+      <img
+        src="assets/nuovologorosso.png"
+        alt="Logo"
+        height="30"
+        class="d-inline-block align-text-top"
+      />
     </a>
   </ng-template>
   <ng-template pTemplate="item" let-item let-root="root">
     @if (item.routerLink) {
-      <a pRipple class="flex align-items-center p-menuitem-link" [routerLink]="item.routerLink">
-          <span>{{ item.label }}</span>
+      <a
+        pRipple
+        class="flex align-items-center p-menuitem-link"
+        [routerLink]="item.routerLink"
+      >
+        <span>{{ item.label }}</span>
       </a>
     }
     @if (item.externalLink) {
-      <a pRipple class="flex align-items-center p-menuitem-link" [href]="item.externalLink" target="_blank">
-          <span>{{ item.label }}</span>
+      <a
+        pRipple
+        class="flex align-items-center p-menuitem-link"
+        [href]="item.externalLink"
+        target="_blank"
+      >
+        <span>{{ item.label }}</span>
       </a>
     }
   </ng-template>

@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from '@firebase/firestore';
 import { provideHttpClient } from '@angular/common/http';
+import { DialogService } from 'primeng/dynamicdialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,7 +17,8 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-      provideFirestore(() => getFirestore())
+      provideFirestore(() => getFirestore()),
     ]),
+    DialogService,
   ],
 };
